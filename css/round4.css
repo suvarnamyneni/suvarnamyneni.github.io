@@ -3860,20 +3860,40 @@ html.is-path-snap #education .path-stick,
 }
 #path .path-logo {
   display: block;
-  height: 22px;
+  height: 28px;
   width: auto;
   max-width: 120px;
   flex: none;
 }
 
-/* Work path: the year scrubber sits right under the title. */
+/* Work path: a quiet vertical year rail on the right edge (desktop); phones keep it at the bottom. */
 html.has-motion:not(.is-path-snap) #path .path-scrub {
-  top: calc(108px + 4vw + 52px);
+  top: 50%;
   bottom: auto;
-  left: 6vw;
-  transform: none;
-  width: min(620px, calc(88vw));
+  left: auto;
+  right: 22px;
+  transform: translateY(-50%);
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  height: auto;
+  padding: 10px 6px;
+  border-radius: 999px;
+  background: rgba(255, 251, 247, 0.78);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
-html.is-path-snap #path .path-head { order: 0; }
-html.is-path-snap #path .path-scrub { order: 1; margin: 4px auto 10px; }
-html.is-path-snap #path .path-track { order: 2; }
+html.has-motion:not(.is-path-snap) #path .path-scrub-line {
+  display: none;
+}
+html.has-motion:not(.is-path-snap) #path .path-scrub button {
+  opacity: 0.75;
+}
+html.has-motion:not(.is-path-snap) #path .path-scrub button[aria-current="true"] {
+  opacity: 1;
+}
+
+/* Work path: logo, then title, then dates on the next line. */
+#path .path-copy .path-org { margin: 0 0 10px; }
+#path .path-copy h3 + .path-when { display: inline-block; margin-top: 10px; }
