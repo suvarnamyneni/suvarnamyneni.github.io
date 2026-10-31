@@ -314,8 +314,21 @@
     applyStickyPath();
   }
 
+  function pathIsGrouped() {
+    const section = document.getElementById("path");
+    return !!(section && section.classList.contains("path-grouped"));
+  }
+
   function scrollToPathIndex(index) {
     if (!pathBoard) return;
+    if (pathIsGrouped()) {
+      const episode = pathBoard.episodes[index];
+      if (!episode) return;
+      const count = pathBoard.episodes.length;
+      setPathActive(index, count === 1 ? 0 : index / Math.max(1, count - 1));
+      scrollTo(episode, { offset: -140, duration: reduceMotion ? 0 : 0.8 });
+      return;
+    }
     const count = pathBoard.episodes.length;
     const next = Math.max(0, Math.min(count - 1, index));
     const progress = count === 1 ? 0 : next / (count - 1);
@@ -1138,7 +1151,7 @@
       applyStackPath();
     }
 
-    if (!stack && window.ScrollTrigger && pathBoard) {
+    if (!stack && window.ScrollTrigger && pathBoard && !pathIsGrouped()) {
       layoutPath();
       const steps = Math.max(1, pathBoard.episodes.length - 1);
       pathTrigger = window.ScrollTrigger.create({
@@ -1158,9 +1171,11 @@
         window.addEventListener("wheel", notePathWheel, { passive: true });
       }
     } else if (pathBoard) {
-      layoutPath();
       pathBoard.track.style.transform = "none";
-      syncSnapPath();
+      if (!pathIsGrouped()) {
+        layoutPath();
+        syncSnapPath();
+      }
     }
 
     window.ScrollTrigger && window.ScrollTrigger.refresh();

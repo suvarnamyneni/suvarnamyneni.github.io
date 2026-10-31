@@ -3714,3 +3714,129 @@ html.is-path-snap .path-scrub {
     background: #fffdfb;
   }
 }
+
+/* Path groups: work and education stay in the same card style, in normal flow. */
+
+#path.path-grouped .path-weave,
+#path.path-grouped .path-plane {
+  display: none;
+}
+
+#path.path-grouped .path-pin,
+html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
+html.is-path-snap #path.path-grouped .path-stick {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  display: block;
+}
+
+html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
+html.is-path-snap #path.path-grouped .path-stick {
+  padding: 128px 0 72px;
+}
+
+#path.path-grouped .path-head,
+html.is-path-snap #path.path-grouped .path-head {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  pointer-events: auto;
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto 28px;
+}
+
+html.has-motion:not(.is-path-snap) #path.path-grouped .path-track,
+html.is-path-snap #path.path-grouped .path-track {
+  display: block;
+  width: min(var(--max), calc(100% - 48px));
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  padding: 0;
+  overflow: visible;
+  transform: none !important;
+  scroll-snap-type: none;
+}
+
+#path.path-grouped .path-group + .path-group {
+  margin-top: 42px;
+}
+
+#path.path-grouped .path-group-heading {
+  margin: 0 0 6px;
+  color: #b2512c;
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+html.has-motion:not(.is-path-snap) #path.path-grouped .path-ep,
+html.is-path-snap #path.path-grouped .path-ep {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 28px;
+  flex: none;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 18px 0 20px;
+  overflow: hidden;
+  scroll-snap-align: none;
+}
+
+#path.path-grouped .path-ep + .path-ep {
+  border-top: 1px solid rgba(163, 71, 40, 0.14);
+}
+
+html.has-motion:not(.is-path-snap) #path.path-grouped .path-art,
+html.is-path-snap #path.path-grouped .path-art {
+  width: 100%;
+  max-width: 240px;
+  margin: 0;
+  justify-self: start;
+}
+
+html.is-path-snap #path.path-grouped .path-copy {
+  width: auto;
+  max-width: 36rem;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: left;
+}
+
+#path.path-grouped .path-scrub,
+html.is-path-snap #path.path-grouped .path-scrub {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  width: min(760px, calc(100% - 48px));
+  height: 58px;
+  margin: 36px auto 0;
+}
+
+@media (max-width: 759px) {
+  html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
+  html.is-path-snap #path.path-grouped .path-stick {
+    padding: 108px 0 48px;
+  }
+
+  html.has-motion:not(.is-path-snap) #path.path-grouped .path-ep,
+  html.is-path-snap #path.path-grouped .path-ep {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+    justify-items: start;
+  }
+
+  html.has-motion:not(.is-path-snap) #path.path-grouped .path-art,
+  html.is-path-snap #path.path-grouped .path-art {
+    width: min(220px, 62vw);
+    max-width: 220px;
+  }
+}
