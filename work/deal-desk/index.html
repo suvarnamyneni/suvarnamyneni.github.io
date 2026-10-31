@@ -12,9 +12,21 @@
 <meta property="og:image" content="https://suvarnamyneni.github.io/assets/case/deal-desk/hero.webp">
 <link rel="icon" href="../../assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="case-study.css">
+<link rel="stylesheet" href="../../css/sm-footer.css">
 <style>
   .table-scroll{overflow-x:auto}
   .table-scroll table{min-width:680px}
+  .cs-hero .lede,.cs-section .head p,.body p,.body li{max-width:none}
+  .comp-scroll{max-height:70vh;overflow:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  .comp-scroll table{min-width:680px;border:0;border-radius:0;overflow:visible;border-collapse:separate;border-spacing:0}
+  .comp-scroll thead th{position:sticky;top:0;z-index:2;background:#FAFAFB;box-shadow:inset 0 -1px 0 var(--line)}
+  .persona-hint{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .persona-row{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;max-width:100%;min-width:0;padding-bottom:14px;scrollbar-width:thin;scrollbar-color:#14161A #E4E6EB;outline:none}
+  .persona-row:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .persona-row::-webkit-scrollbar{height:10px}
+  .persona-row::-webkit-scrollbar-track{background:#E4E6EB;border-radius:99px}
+  .persona-row::-webkit-scrollbar-thumb{background:#14161A;border-radius:99px}
+  .persona-row>.card{flex:0 0 320px;width:320px;max-width:78%;scroll-snap-align:start}
   caption{caption-side:bottom;text-align:left;font-size:14px;color:var(--muted);padding:10px 4px 0}
   .cs-cover figcaption{font-size:14px;color:var(--muted);padding:12px 16px 16px}
   .type-display{font-family:Georgia,"Iowan Old Style",Palatino,"Palatino Linotype",serif;font-size:40px;line-height:1.1;letter-spacing:-.02em}
@@ -26,7 +38,7 @@
 <nav class="cs-nav"><div class="wrap">
   <a class="back" href="https://suvarnamyneni.github.io/">← All work</a>
   <div class="links">
-    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#uikit">UI Kit</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
+    <a href="#role">My Role</a><a href="#design">Design Process</a><a href="#problem">Problem</a><a href="#stakeholders">Stakeholders</a><a href="#users">End Users</a><a href="#research">Research</a><a href="#competitive">Competitive</a><a href="#personas">Personas</a><a href="#decisions">Decisions</a><a href="#prototype">Prototype</a><a href="#final">Final Design</a><a href="#outcome">Outcome</a><a href="#metrics">Metrics</a>
   </div>
 </div></nav>
 
@@ -35,11 +47,11 @@
   <h1>Deal Desk</h1>
   <p class="lede">One deal, one platform, one desk. Deal Desk is eXp’s Transactions Re-imagined platform, the agntOS transaction desk. I led the staff and settlement experience so a deal can move from submitted to paid in one place, for agents and for every staff role in between, under US and Canadian rules.</p>
   <dl class="meta">
-    <div><dt>Role</dt><dd>UX lead, staff and settlement</dd></div>
-    <div><dt>Timeline</dt><dd>2025–2026 · prototype</dd></div>
+    <div><dt>Role</dt><dd>UX Designer</dd></div>
+    <div><dt>Timeline</dt><dd>13 months</dd></div>
     <div><dt>Team</dt><dd>Product, engineering, operations, accounting, analysts, compliance, support</dd></div>
     <div><dt>Platform</dt><dd>Web · US and Canada</dd></div>
-    <div><dt>Tools</dt><dd>Grok, Claude, Cursor, GitHub, Lovable, Miro</dd></div>
+    <div><dt>Tools</dt><dd>Grok, Claude, Cursor, GitHub, Lovable, Miro, Figma</dd></div>
   </dl>
   <figure class="cs-cover"><img src="../../assets/case/deal-desk/hero.webp" width="1600" height="1011" alt="Transaction Analyst queue in the Deal Desk prototype, on a laptop. Deals show a stage, a next action, and a critical or asked-agent status. The people, addresses, and amounts are fictional demo data." fetchpriority="high" decoding="async">
     <figcaption>The analyst queue in the prototype. Addresses, people, and dollar amounts on every screen in this study are fictional demo data. The work is designed and prototyped. Production results are still ahead.</figcaption>
@@ -48,7 +60,7 @@
 
 <main>
 <section class="cs-section" id="role"><div class="wrap">
-  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>Suvarna Myneni, Sr UX Designer, Feb 2023 – Present. UX lead for staff and settlement on Deal Desk.</p></div></div>
+  <div class="head"><div class="num">01</div><div><h2>My Role</h2><p>Suvarna Myneni, UX Designer, Feb 2023 – Present. UX Designer for staff and settlement on Deal Desk.</p></div></div>
   <div class="body">
     <p>I extended an analyst prototype a teammate had started, and I owned the flows from the queue through disbursement. The work was journey mapping, UX design, AI in the product, and prototypes. Agents are meant to work inside the agent platform. Staff work Deal Desk and Task Center. In 2025–2026 the work was still in prototype and demo.</p>
     <div class="grid g3">
@@ -162,7 +174,7 @@
   <div class="head"><div class="num">07</div><div><h2>Competitive Analysis</h2><p>The tools a deal already moved through. This is the landscape from the demos and the decision notes, not a separate market study.</p></div></div>
   <div class="body">
     <p>The program set out to replace TRX and SkySlope. In the work I watched, replacement was not a clean cut. The analyst still left the desk, and leadership kept the SkySlope document library and APIs as the backend for a time.</p>
-    <div class="table-scroll">
+    <div class="comp-scroll" tabindex="0">
     <table>
       <caption>What each system already did, and the gap this desk was designed against.</caption>
       <thead><tr><th>Product</th><th>What it was doing</th><th>What it already gave the team</th><th>Gap the desk responds to</th></tr></thead>
@@ -186,7 +198,8 @@
       <img src="../../assets/case/deal-desk/personas.webp" width="1600" height="589" alt="Nineteen personas: five agent roles and fourteen staff roles, grouped as coordination and review, operations and oversight, and support and after close." loading="lazy" decoding="async">
       <figcaption>The persona set. Role names are generalized. Every role that touches a deal, from submission to post-close.</figcaption>
     </figure>
-    <div class="grid g2">
+    <p class="persona-hint">Scroll sideways <span aria-hidden="true">→</span></p>
+    <div class="persona-row" tabindex="0" aria-label="User personas">
       <article class="card persona"><div class="avatar">RH</div><div>
         <h3>Remy Holt, Transaction Analyst</h3>
         <p>US residential settlement. Representative.</p>
@@ -344,56 +357,8 @@
   </div>
 </div></section>
 
-<section class="cs-section" id="uikit"><div class="wrap">
-  <div class="head"><div class="num">11</div><div><h2>UI Kit</h2><p>The project's own visual language, shown as a specimen.</p></div></div>
-  <div class="body">
-    <p>Deal Desk uses one visual system for the agent and for staff. Claude Design held that system. The swatches below are sampled from the prototype screens in this study. They are the product’s colors. This page around them uses the shared case-study palette. Titles on the product are a serif. Labels, tables, and controls are a sans. I am not naming a foundry the screens do not identify.</p>
-    <div class="swatches">
-      <div class="swatch"><i style="background:#FBF9F5"></i><span>Canvas<br>#FBF9F5</span></div>
-      <div class="swatch"><i style="background:#FFFFFF"></i><span>Surface<br>#FFFFFF</span></div>
-      <div class="swatch"><i style="background:#111224"></i><span>Ink / primary<br>#111224</span></div>
-      <div class="swatch"><i style="background:#E8ECF4"></i><span>Hero wash<br>#E8ECF4</span></div>
-      <div class="swatch"><i style="background:#306080"></i><span>Pipeline blue<br>#306080</span></div>
-      <div class="swatch"><i style="background:#C89898"></i><span>Critical<br>#C89898</span></div>
-      <div class="swatch"><i style="background:#E9C2C4"></i><span>Critical wash<br>#E9C2C4</span></div>
-      <div class="swatch"><i style="background:#A08860"></i><span>Asked agent<br>#A08860</span></div>
-      <div class="swatch"><i style="background:#F8F0D8"></i><span>Attention wash<br>#F8F0D8</span></div>
-      <div class="swatch"><i style="background:#809088"></i><span>Stage sage<br>#809088</span></div>
-      <div class="swatch"><i style="background:#D8F0E0"></i><span>Sage wash<br>#D8F0E0</span></div>
-      <div class="swatch"><i style="background:#8090A0"></i><span>Muted<br>#8090A0</span></div>
-    </div>
-    <div class="grid g2">
-      <article class="card">
-        <p class="type-label" style="color:#8090A0">Display · serif</p>
-        <p class="type-display" style="color:#111224">1420 Alder Street</p>
-        <p>Deal titles and the agent greeting. The specimen face here is a stand-in serif, so the scale is visible on this page.</p>
-      </article>
-      <article class="card">
-        <p class="type-label" style="color:#8090A0">UI · sans</p>
-        <p class="type-ui" style="font-size:28px;font-weight:600;letter-spacing:-.02em;color:#111224">My queue</p>
-        <p class="type-ui">11 transactions waiting on transaction analyst review.</p>
-        <p class="type-label">Next action · label</p>
-        <p>Buttons, table headers, tabs, and provenance chips use the sans. Primary actions are filled ink. Secondary actions are a quiet outline: Message agent, Ask agent.</p>
-      </article>
-    </div>
-    <div class="grid g3">
-      <article class="card"><h3>Status chips</h3><p>Critical is a dusty rose. Asked agent is sand. Stage chips, such as DA sent, TA settlement, and Analyst intake, sit in a pale sage. Informational alerts never use the blocking color. The mentor minimum says no action is required.</p></article>
-      <article class="card"><h3>Provenance chips</h3><p>Agent-provided and Extracted sit on the value itself. A check read by document AI is tagged extracted. A row the analyst types is tagged as entered by them. The analyst uses a value. They do not retype it.</p></article>
-      <article class="card"><h3>Gates</h3><p>The primary button stays disabled until the blockers are clear, and the control says why: waiting on compliance, N blockers still open, or the authorization was already sent. Provisional money is labeled, with a timestamp.</p></article>
-    </div>
-    <figure class="figure">
-      <img src="../../assets/case/deal-desk/alerts.webp" width="1600" height="628" alt="Critical alerts on a deal, with a sale-price mismatch and a seller-name mismatch, each offering a review. Demo data." loading="lazy" decoding="async">
-      <figcaption>Specimen: alert cards, provenance chips, a filled primary (Review &amp; choose, Send DA), and a quiet secondary (Ask agent, Message agent).</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="../../assets/case/deal-desk/queue.webp" width="1600" height="1114" alt="Analyst queue with filters for new files, documents, action, disbursement authorization, and settlement. Each row has a next action. Demo data." loading="lazy" decoding="async">
-      <figcaption>Specimen: the queue table, lifecycle tabs, Critical and Asked agent chips, and the next action on the row. Demo data.</figcaption>
-    </figure>
-  </div>
-</div></section>
-
 <section class="cs-section dark" id="final"><div class="wrap">
-  <div class="head"><div class="num">12</div><div><h2>Final Design</h2><p>From the queue to disbursed, on one file. These are the prototype screens. People, addresses, and amounts are fictional demo data.</p></div></div>
+  <div class="head"><div class="num">11</div><div><h2>Final Design</h2><p>From the queue to disbursed, on one file. These are the prototype screens. People, addresses, and amounts are fictional demo data.</p></div></div>
   <div class="body">
     <p>I designed the spine from submit through disbursement, with the exception lane drawn at the same time as the happy path. Validation gates and document AI sit on the file. The queue is role-based: analyst, compliance, and operations each see their own work. Filters follow the lifecycle, including new from the agent, needs documents, needs action, ready for the disbursement authorization, and in settlement.</p>
     <figure class="figure">
@@ -479,7 +444,7 @@
 </div></section>
 
 <section class="cs-section" id="outcome"><div class="wrap">
-  <div class="head"><div class="num">13</div><div><h2>Outcome</h2><p>What the desk is aimed at. The score comes after launch.</p></div></div>
+  <div class="head"><div class="num">12</div><div><h2>Outcome</h2><p>What the desk is aimed at. The score comes after launch.</p></div></div>
   <div class="body">
     <p>This work was still in prototype and demo in the sources I have. I am not going to invent a before-and-after on minutes per deal, screens per settlement, or support contacts. What I can account for is the shape of the design, and the counts from the maps and the audits.</p>
     <div class="grid g2">
@@ -507,7 +472,7 @@
 </div></section>
 
 <section class="cs-section" id="metrics"><div class="wrap">
-  <div class="head"><div class="num">14</div><div><h2>Metrics</h2><p>Counts from the maps, the demo, and the audits. The three aims at the end have no number yet.</p></div></div>
+  <div class="head"><div class="num">13</div><div><h2>Metrics</h2><p>Counts from the maps, the demo, and the audits. The three aims at the end have no number yet.</p></div></div>
   <div class="body">
     <div class="grid g4">
       <div class="metric"><div class="v">19</div><div class="l">Personas mapped, 5 agent and 14 staff</div><div class="n">Measured</div></div>
@@ -540,6 +505,31 @@
   <div><small>Previous</small><a href="https://suvarnamyneni.github.io/agntos-case-study/">AgntOS</a></div>
   <div style="text-align:right"><small>Next project</small><a href="https://suvarnamyneni.github.io/amazon-prime-music-case-study/">Amazon Prime Music</a></div>
 </div></div>
-<footer class="cs-foot"><div class="wrap">© 2026 Suvarna Myneni · <a href="https://www.linkedin.com/in/suvarnamyneni/">LinkedIn</a></div></footer>
+<footer class="sm-footer" role="contentinfo">
+  <div class="sm-footer-inner">
+    <p class="sm-footer-name">Suvarna Myneni</p>
+    <p class="sm-footer-role">Sr UX Designer · Hyderabad, India · Open to remote or Hyderabad roles</p>
+    <nav class="sm-footer-links" aria-label="Footer">
+      <a href="https://suvarnamyneni.github.io/">Portfolio home</a>
+      <a href="mailto:suvarnamyneni@gmail.com">suvarnamyneni@gmail.com</a>
+      <a href="https://suvarnamyneni.github.io/assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
+      <a href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sm-sr"> (opens in a new tab)</span></a>
+    </nav>
+    <p class="sm-footer-copy">© 2026 Suvarna Myneni</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var row = document.querySelector(".persona-row");
+  if (!row) return;
+  row.addEventListener("keydown", function (event) {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    var card = row.querySelector(":scope > .card");
+    var step = card ? card.getBoundingClientRect().width + 16 : Math.round(row.clientWidth * 0.8);
+    row.scrollBy({ left: event.key === "ArrowRight" ? step : -step });
+    event.preventDefault();
+  });
+})();
+</script>
 </body>
 </html>

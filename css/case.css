@@ -23,7 +23,6 @@
 }
 
 .case-lede {
-  max-width: 38rem;
   margin-top: 22px;
   color: var(--muted);
   font-size: clamp(1.05rem, 1.4vw, 1.2rem);
@@ -113,7 +112,6 @@
 }
 
 .case-copy {
-  max-width: 40rem;
   margin-top: 18px;
   color: var(--muted);
   font-size: 1.05rem;
@@ -124,7 +122,6 @@
 }
 
 .case-ask {
-  max-width: 36rem;
   margin: 28px 0 0;
   padding-left: 18px;
   border-left: 2px solid #b2512c;
@@ -260,7 +257,6 @@
 }
 
 .case-quote {
-  max-width: 44rem;
   margin-top: 28px;
 }
 
@@ -814,7 +810,6 @@ html.has-case-motion .case-meta.is-in > div:nth-child(3) { transition-delay: 0.1
 }
 
 .story-dek {
-  max-width: 34rem;
   margin-top: 8px;
   color: var(--muted);
   font-size: 1.02rem;
