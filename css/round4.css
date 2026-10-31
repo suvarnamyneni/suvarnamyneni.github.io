@@ -3717,27 +3717,27 @@ html.is-path-snap .path-scrub {
 
 /* Path groups: work and education stay in the same card style, in normal flow. */
 
-#path.path-grouped .path-weave,
-#path.path-grouped .path-plane {
+.path-grouped .path-weave,
+.path-grouped .path-plane {
   display: none;
 }
 
-#path.path-grouped .path-pin,
-html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
-html.is-path-snap #path.path-grouped .path-stick {
+.path-grouped .path-pin,
+html.has-motion:not(.is-path-snap) .path-grouped .path-stick,
+html.is-path-snap .path-grouped .path-stick {
   height: auto;
   max-height: none;
   overflow: visible;
   display: block;
 }
 
-html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
-html.is-path-snap #path.path-grouped .path-stick {
+html.has-motion:not(.is-path-snap) .path-grouped .path-stick,
+html.is-path-snap .path-grouped .path-stick {
   padding: 128px 0 72px;
 }
 
-#path.path-grouped .path-head,
-html.is-path-snap #path.path-grouped .path-head {
+.path-grouped .path-head,
+html.is-path-snap .path-grouped .path-head {
   position: relative;
   top: auto;
   left: auto;
@@ -3747,8 +3747,8 @@ html.is-path-snap #path.path-grouped .path-head {
   margin: 0 auto 28px;
 }
 
-html.has-motion:not(.is-path-snap) #path.path-grouped .path-track,
-html.is-path-snap #path.path-grouped .path-track {
+html.has-motion:not(.is-path-snap) .path-grouped .path-track,
+html.is-path-snap .path-grouped .path-track {
   display: block;
   width: min(var(--max), calc(100% - 48px));
   max-width: 100%;
@@ -3760,11 +3760,11 @@ html.is-path-snap #path.path-grouped .path-track {
   scroll-snap-type: none;
 }
 
-#path.path-grouped .path-group + .path-group {
+.path-grouped .path-group + .path-group {
   margin-top: 42px;
 }
 
-#path.path-grouped .path-group-heading {
+.path-grouped .path-group-heading {
   margin: 0 0 6px;
   color: #b2512c;
   font-family: var(--display);
@@ -3774,8 +3774,8 @@ html.is-path-snap #path.path-grouped .path-track {
   line-height: 1.1;
 }
 
-html.has-motion:not(.is-path-snap) #path.path-grouped .path-ep,
-html.is-path-snap #path.path-grouped .path-ep {
+html.has-motion:not(.is-path-snap) .path-grouped .path-ep,
+html.is-path-snap .path-grouped .path-ep {
   display: grid;
   grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
   align-items: center;
@@ -3790,19 +3790,19 @@ html.is-path-snap #path.path-grouped .path-ep {
   scroll-snap-align: none;
 }
 
-#path.path-grouped .path-ep + .path-ep {
+.path-grouped .path-ep + .path-ep {
   border-top: 1px solid rgba(163, 71, 40, 0.14);
 }
 
-html.has-motion:not(.is-path-snap) #path.path-grouped .path-art,
-html.is-path-snap #path.path-grouped .path-art {
+html.has-motion:not(.is-path-snap) .path-grouped .path-art,
+html.is-path-snap .path-grouped .path-art {
   width: 100%;
   max-width: 240px;
   margin: 0;
   justify-self: start;
 }
 
-html.is-path-snap #path.path-grouped .path-copy {
+html.is-path-snap .path-grouped .path-copy {
   width: auto;
   max-width: 36rem;
   padding-left: 0;
@@ -3810,8 +3810,8 @@ html.is-path-snap #path.path-grouped .path-copy {
   text-align: left;
 }
 
-#path.path-grouped .path-scrub,
-html.is-path-snap #path.path-grouped .path-scrub {
+.path-grouped .path-scrub,
+html.is-path-snap .path-grouped .path-scrub {
   position: relative;
   left: auto;
   bottom: auto;
@@ -3822,21 +3822,58 @@ html.is-path-snap #path.path-grouped .path-scrub {
 }
 
 @media (max-width: 759px) {
-  html.has-motion:not(.is-path-snap) #path.path-grouped .path-stick,
-  html.is-path-snap #path.path-grouped .path-stick {
+  html.has-motion:not(.is-path-snap) .path-grouped .path-stick,
+  html.is-path-snap .path-grouped .path-stick {
     padding: 108px 0 48px;
   }
 
-  html.has-motion:not(.is-path-snap) #path.path-grouped .path-ep,
-  html.is-path-snap #path.path-grouped .path-ep {
+  html.has-motion:not(.is-path-snap) .path-grouped .path-ep,
+  html.is-path-snap .path-grouped .path-ep {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 8px;
     justify-items: start;
   }
 
-  html.has-motion:not(.is-path-snap) #path.path-grouped .path-art,
-  html.is-path-snap #path.path-grouped .path-art {
+  html.has-motion:not(.is-path-snap) .path-grouped .path-art,
+  html.is-path-snap .path-grouped .path-art {
     width: min(220px, 62vw);
     max-width: 220px;
   }
 }
+
+/* Education sits in its own static section after the interactive work path. */
+#education.panel {
+  padding: 0;
+  background: var(--bg);
+}
+html.has-motion:not(.is-path-snap) #education .path-stick,
+html.is-path-snap #education .path-stick,
+#education .path-stick {
+  padding: 56px 0 72px;
+}
+
+/* Work path: official company logo to the left of the company name. */
+#path .path-org {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#path .path-logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 120px;
+  flex: none;
+}
+
+/* Work path: the year scrubber sits right under the title. */
+html.has-motion:not(.is-path-snap) #path .path-scrub {
+  top: calc(108px + 4vw + 52px);
+  bottom: auto;
+  left: 6vw;
+  transform: none;
+  width: min(620px, calc(88vw));
+}
+html.is-path-snap #path .path-head { order: 0; }
+html.is-path-snap #path .path-scrub { order: 1; margin: 4px auto 10px; }
+html.is-path-snap #path .path-track { order: 2; }
