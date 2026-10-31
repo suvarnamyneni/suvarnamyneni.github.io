@@ -3896,4 +3896,4 @@ html.has-motion:not(.is-path-snap) #path .path-scrub button[aria-current="true"]
 
 /* Work path: logo, then title, then dates on the next line. */
 #path .path-copy .path-org { margin: 0 0 10px; }
-#path .path-copy h3 + .path-when { display: inline-block; margin-top: 10px; }
+html body #path .path-ep .path-copy h3 + .path-when { display: inline-block; margin-top: 22px !important; margin-bottom: 8px; }
