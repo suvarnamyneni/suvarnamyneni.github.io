@@ -61,6 +61,15 @@
     .persona-grid{grid-template-columns:1fr}
     .cs-hero{padding:56px 0 40px}
   }
+  /* v2 screens: framed, full content width */
+  img.ss{width:100%;max-width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 1px 2px rgba(16,18,24,.05),0 10px 30px -12px rgba(16,18,24,.18)}
+  .decision figure img.ss,.shot img.ss{width:100%}
+  .cs-cover img.ss{border:0;border-radius:0;box-shadow:none}
+  .ss-link{display:block;border-radius:12px;cursor:zoom-in}
+  .ss-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .shot + .shot{margin-top:24px}
+  .decision figure + figure{margin-top:28px}
+  .dark img.ss{border-color:#2A2E39;box-shadow:0 12px 34px -14px rgba(0,0,0,.6)}
 </style>
 </head>
 <body>
@@ -83,9 +92,8 @@
     <div><dt>Tools</dt><dd>Figma, Miro, Grok, Claude, Lovable, Cursor, GitHub</dd></div>
     <div><dt>Worked with</dt><dd>Product, engineering, operations, accounting, analysts, compliance, support</dd></div>
   </dl>
-  <figure class="cs-cover"><img src="../../assets/case/deal-desk/hero.webp" width="1600" height="1011" alt="Transaction Analyst queue in the Deal Desk prototype, on a laptop. Deals show a stage, a next action, and a critical or asked-agent status. The people, addresses, and amounts are fictional demo data." fetchpriority="high" decoding="async">
-    <figcaption>The analyst queue in my prototype. Every name, address, and dollar amount in this case study is fictional demo data. The work is designed and prototyped. It has not launched yet.</figcaption>
-  </figure>
+  <figure class="cs-cover"><a class="ss-link" href="../../assets/case/deal-desk/v3/analyst-queue.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/analyst-queue.webp" width="1920" height="1350" alt="Transaction Analyst queue, My queue, in the Deal Desk design system. Tabs: Needs action 3, Ready for Disbursement Authorization 2, In settlement 2, All 8. The first row, 418 Alder Court, Springfield, is at Needs review with 3 open items and is expanded to show them: seller disclosure missing, commission agreement split differs from listing, and an earnest money amount mismatch. Other rows show stage, top blocker, price, expected close, agent, and analyst. The people, addresses, and amounts are fictional demo data." fetchpriority="high" decoding="async"></a>
+        <figcaption>The analyst queue in the design system: eight demo deals, each with its stage and top blocker, and 418 Alder Court opened to show its three open items. Every name, address, and dollar amount in this case study is fictional demo data. The work is designed and prototyped. It has not launched yet.</figcaption></figure>
 </div></header>
 
 <main>
@@ -239,8 +247,10 @@
         <dt>Why</dt><dd>Those systems were still in use. Hiding them would have made the status untrue.</dd>
         <dt>Trade-off</dt><dd>A busier screen. I kept it manageable with guided alerts and by showing detail only when it is needed.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/overview.webp" width="1600" height="1114" alt="Deal overview with the file header, open items that lock sending the disbursement authorization, and a timeline. Demo data." loading="lazy" decoding="async">
-        <figcaption>The deal overview. One header with the parties, close date, price, and anything still blocking Send. Tabs show counts.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/deal-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/deal-overview.webp" width="1920" height="1350" alt="Deal overview for 418 Alder Court, Springfield, status Needs review: header with price $512,000, expected close Nov 14, 2026, agent Dana Whitfield, and file ID; review steps with Documents and Commission done and Checklist 3 open; Property, Parties, and Commission cards (gross $15,360, net to settle $11,171.80, fees $1,385); and an Open items list with due dates. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The deal overview in the design system, for 418 Alder Court. One header, the review steps as a strip (documents and commission done, checklist three open), the parties and money at a glance, and the open items with due dates.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/deal-overview-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/deal-overview-210.webp" width="2400" height="2250" alt="Deal overview for 210 Highline Ct, Austin, at the TA settlement step: status timeline, summary tiles (sale price $615,000, gross revenue $18,450.00, eXp revenue $3,749.50, funds received $18,450.00), transaction details, earnest money held by title, a draft Oracle records panel, and a workflow guide with Send DA available and no blockers. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The deal overview for 210 Highline Ct. One header and status timeline, the money at a glance, and the accounting record (Oracle, still a draft) on the same file. The workflow guide shows no blockers, so Send DA is available.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -263,8 +273,10 @@
         <dt>What I chose</dt><dd>Each fee is its own line, with its source shown. Fee rules from the August demo are applied automatically, for example a $100 fee on a non-preferred third-party advance and $50 on extended hand.</dd>
         <dt>Trade-off</dt><dd>Ownership-percentage splits were not confirmed by operations, so I did not design them early. They waited.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/financials.webp" width="1600" height="1114" alt="Financials tab with sale price, commission, and line items that show where each value came from. Demo data." loading="lazy" decoding="async">
-        <figcaption>Financials, prefilled from the agent’s entry and the documents. Each line shows where it came from, and the analyst edits only what changed.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/financials.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/financials.webp" width="1920" height="1350" alt="Commission and Financials tab for 418 Alder Court: sale price $512,000 with list price and $5,000 concessions, total commission $15,360 at 3.00% split as listing side and buyer side, commission structure Split side, and a Commission by agent side table for the listing agent, buyer agent, and co-agent with gross, split, fees, and net to agent. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Commission and financials in the design system, for 418 Alder Court. Each side of the commission, and each agent’s gross, split, fees, and net, is its own line instead of a note.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/financials-999.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/financials-999.webp" width="2400" height="2233" alt="Financials tab for 999 Validation Lane: gross compensation with sale price $500,000, a 3% compensation base, a $500 seller bonus line, and a $1,000 referral deduction line; per-agent compensation for two agents with share, bonus, split, cap progress, and itemized service fees. A $500.00 underpayment banner and 3 open blockers are also visible. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Financials for 999 Validation Lane. The seller bonus and the referral deduction are their own lines, and each agent’s service fees are itemized. The $500 underpayment and three open blockers stay in view.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -276,10 +288,10 @@
         <dt>Why</dt><dd>Document AI reads; it does not decide. The audit trail is the point.</dd>
         <dt>Left open</dt><dd>Which source should win by default was not decided, so I left it open instead of guessing.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/alerts.webp" width="1600" height="628" alt="Critical alerts tab listing a sale price mismatch and a seller name mismatch, each with Review and choose and Ask agent actions. Demo data." loading="lazy" decoding="async">
-        <figcaption>Critical alerts explain the problem and point to the fix: review and choose, or ask the agent.</figcaption></figure>
-      <figure><img src="../../assets/case/deal-desk/mismatch.webp" width="1600" height="1114" alt="Side-by-side compare of an agent-entered sale price and the price extracted from the contract, with the source page visible. Demo data." loading="lazy" decoding="async">
-        <figcaption>The compare view. The extracted value cites the document, page, and section, so the analyst picks a value instead of retyping it.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/alerts-999.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/alerts-999.webp" width="2400" height="1750" alt="Overview of 999 Validation Lane with a $500.00 underpayment banner (received $15,000.00 vs expected $15,500.00), Send DA disabled with the note Resolve 3 blockers in the Blockers panel first, and a workflow guide listing four critical alerts: a missing DA acknowledgment signature, confirm coordinator on file, a $500 split/bonus mismatch, and the underpayment. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Critical alerts on 999 Validation Lane. Each alert names the problem in plain words: a missing signature, an unconfirmed coordinator, a $500 split/bonus mismatch, and a $500 underpayment. Send DA says what it is waiting for.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/docai-review.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/docai-review.webp" width="2400" height="1590" alt="Review what we found panel while an agent creates a transaction for 412 Juniper Hollow Dr, Charlotte, NC: property, purchase price 720000, buyers, seller, closing date, and acceptance date are prefilled and each tagged From DocAI, with a note that anything changed is marked as agent entered. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The closest screen in this build to the compare view: the agent checks what document AI read before submitting. Each field is tagged From DocAI, and anything the agent changes is marked as agent entered. The side-by-side compare is not in this prototype build.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -291,8 +303,8 @@
         <dt>What I chose</dt><dd>Every Send control says why it is disabled: waiting on compliance, a number of blockers still open, or already sent. The header lists what still blocks Send.</dd>
         <dt>Trade-off</dt><dd>A little more friction on the happy path. Trigger-only approvals mean not every US file waits.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/ta-confirm.webp" width="776" height="565" alt="Confirm disbursement authorization, with payees, amounts, and payment methods, and a check that the total matches expected funds. Demo data." loading="lazy" decoding="async">
-        <figcaption>Confirming the payout. Payees, amounts, and payment methods are checked against the expected funds before it is sent.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/da-sent-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/da-sent-210.webp" width="2400" height="1500" alt="Disbursement tab for 210 Highline Ct after sending: the authorization is marked Sent Nov 1, 12:58 AM, both Send DA buttons are disabled with the note DA already sent, and a toast confirms it was sent to the title company on file and the deal moved to In settlement. Payees eXp Realty $3,749.50 and Allison Reyes $14,700.50 by ACH, total $18,450.00. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>After sending. Send DA is disabled and says why (“DA already sent”), and a message confirms where it went. This build confirms after sending; it has no separate confirm dialog.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -304,8 +316,8 @@
         <dt>Why</dt><dd>Accounting has already been told, so the history must stay intact.</dd>
         <dt>Trade-off</dt><dd>A correction is extra work, not a quick edit.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/settlement.webp" width="1600" height="1114" alt="Settlement screen with payments, a variance between expected and actual funds, and the steps from funds received to disbursed. Demo data." loading="lazy" decoding="async">
-        <figcaption>Settlement. The gap between expected and actual funds is shown live. “Balanced” is something the file earns, not a label someone types.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/funds-variance-999.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/funds-variance-999.webp" width="2400" height="1758" alt="Settlement tab for 999 Validation Lane: expected 15500 and actual 15000, variance −$500.00, settlement progress at Awaiting funds with Disbursed greyed out and the note Disbursed unlocks after the DA is sent, and Send DA disabled until 3 blockers are resolved. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Settlement on a file that has not earned “paid”. The −$500.00 variance shows in red, Disbursed is greyed out, and Send DA stays disabled while blockers are open.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -316,8 +328,10 @@
         <dt>What I chose</dt><dd>Anything shown before settlement is labelled as an estimate, with why it might change and how fresh it is.</dd>
         <dt>Trade-off</dt><dd>The agent home cannot show one confident payout number.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/agent-home.webp" width="1600" height="951" alt="Agent home with needs-your-attention, a provisional commission, and a submit-to-Deal-Desk action. Demo account and demo figures." loading="lazy" decoding="async">
-        <figcaption>Agent home. What needs the agent comes first, the commission is marked provisional, and submitting to the desk is one action.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/agent-home.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/agent-home.webp" width="1920" height="1382" alt="Agent home in the design system for the demo agent Dana: tiles for active transactions, closing this month, pending commission $38,400 across 4 closings, and listings; Needs your attention with three items, one blocking (signed purchase agreement missing on 418 Alder Court) and two warnings, each with its action; recent transactions with status; a pipeline summary; and commission cap progress. Demo account and demo figures." loading="lazy" decoding="async"></a>
+        <figcaption>Agent home in the design system. What needs the agent comes first, ranked blocking before warning, each with one action. This version shows pending commission but does not carry the estimate label yet; the prototype build below does.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/agent-home.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/agent-home.webp" width="2400" height="1800" alt="Agent home for the demo agent Allison: production stats, Needs your attention with three deals (one due today, two blocking a transaction), a commission overview of $229,150 labelled as an estimate that may change if closing order shifts, an inbox with one thread per deal, and goals. Demo account and demo figures." loading="lazy" decoding="async"></a>
+        <figcaption>Agent home. What needs the agent comes first, and the commission total is labelled an estimate, with the reason it may change: it assumes 210 Highline Ct closes first.</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -328,8 +342,10 @@
         <dt>What I chose</dt><dd>A role-based queue: analysts, compliance, and operations each see their own work. Each row shows status, stage, and the next action. Filters follow the lifecycle: new from the agent, needs documents, needs action, ready for the payout authorization, and in settlement.</dd>
         <dt>Still a gap</dt><dd>The journey sheet asked for an explicit oldest-first sort. I logged it as a gap rather than claim it was done.</dd>
       </dl>
-      <figure><img src="../../assets/case/deal-desk/queue.webp" width="1600" height="1114" alt="Transaction analyst queue with lifecycle tabs, and rows showing status, stage, next action, price, expected close, and agent. Demo data." loading="lazy" decoding="async">
-        <figcaption>The analyst queue. Critical and asked-agent files stand out, and every row says what to do next.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/analyst-queue.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/analyst-queue.webp" width="2400" height="1467" alt="Transaction Analyst queue in the Deal Desk prototype, All tab with 7 transactions. Each row shows the property, type, stage, top blocker, open items, price, expected close, agent, and analyst, for example 1420 Alder Street at Analyst intake with Lawyer info missing. The people, addresses, and amounts are fictional demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The analyst queue in the prototype build: seven demo deals, each with its stage and top blocker.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/queue-after-disbursement.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/queue-after-disbursement.webp" width="2400" height="1500" alt="Transaction analyst queue, All tab with 6 transactions, and lifecycle tabs with counts: New from agent, Needs docs / checklist, Needs action, Ready for DA, and In settlement. Rows show stage, top blocker, open items, price, expected close, agent, and analyst; 210 Highline Ct shows Disbursed. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The analyst queue. Lifecycle tabs carry counts, and each row shows its stage and its top blocker, such as “Lawyer info missing” or “Agency disclosure unsigned.”</figcaption></figure>
     </article>
 
     <article class="decision">
@@ -357,51 +373,61 @@
       <div class="step-label">Step 1 · Checklist</div>
       <h3>Documents before money</h3>
       <p>Intake starts with documents. The analyst can ask the agent for anything missing, and that request shows up on the agent’s home. Completing the checklist moves the file toward compliance.</p>
-      <figure class="shot small"><img src="../../assets/case/deal-desk/ta-checklist.webp" width="762" height="565" alt="Checklist on a deal, with items to complete before the file is ready for compliance. Demo data." loading="lazy" decoding="async">
-        <figcaption>The checklist the analyst completes before the file goes to compliance.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/checklist-742.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/checklist-742.webp" width="2400" height="1500" alt="Documents tab for 742 Evergreen Terrace at Analyst intake: 6 of 6 uploaded, six required documents marked Uploaded, a Request missing docs from agent button, and Mark checklist complete · ready for compliance. Coordinator Maya Chen is on file as a contact only. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The documents checklist on 742 Evergreen Terrace: six of six uploaded, so the next action is Mark checklist complete, which moves the deal to compliance.</figcaption></figure>
     </div>
     <div class="flow-step">
       <div class="step-label">Step 2 · Compliance</div>
       <h3>Compliance reviews, but does not settle</h3>
       <p>Compliance sees needs review, escalated, and approved. They approve, send the file back with a reason, or escalate. Settlement is view-only for them.</p>
-      <figure class="shot small"><img src="../../assets/case/deal-desk/ta-compliance.webp" width="787" height="565" alt="Compliance queue filtered to files that need review. Demo data." loading="lazy" decoding="async">
-        <figcaption>The compliance queue, filtered to files that need review.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/compliance-queue.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/compliance-queue.webp" width="2400" height="925" alt="Compliance analyst queue, Needs review tab with 3 of 5 transactions: 742 Evergreen Terrace, 58 Maple Grove Rd with Docs pending compliance approval, and 77 Ranch Rd. Tabs for Escalated and Approved. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The compliance queue: Needs review, Escalated, and Approved, with three files waiting for review.</figcaption></figure>
     </div>
     <div class="flow-step">
       <div class="step-label">Step 3 · Alerts</div>
       <h3>Fix what blocks, ignore what doesn’t</h3>
       <p>Resolved choices stay on the file. Informational alerts never block. For example, under the $250 minimum the mentor fee is waived, the math is shown, and the alert says Send is not blocked.</p>
-      <figure class="shot small"><img src="../../assets/case/deal-desk/ta-mentor.webp" width="778" height="565" alt="Resolved mismatches, plus an informational mentor alert that says no action is required and that sending the disbursement authorization is not blocked. Demo data." loading="lazy" decoding="async">
-        <figcaption>Resolved mismatches, and an informational mentor-fee alert that does not block sending.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/critical-alerts.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/critical-alerts.webp" width="1920" height="1380" alt="418 Alder Court overview with status Blocked and a Critical blockers panel listing three items, each with a status and its own action: signed purchase agreement missing (Request from agent), commission split differs from listing agreement (Review split), and earnest money not received (Request from agent). Review steps show Documents blocked. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Critical blockers on 418 Alder Court, in the design system. Each blocker says what is wrong in plain words and carries its own next action, such as Request from agent or Review split.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/blockers-999.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/blockers-999.webp" width="2400" height="1513" alt="999 Validation Lane overview: four critical alerts in the workflow guide, and a Blockers panel with 3 open items (missing DA acknowledgment signature, confirm coordinator on file, $500 split/bonus mismatch), each with a Resolve button. The guide notes Send DA waits until the blockers are resolved. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Blockers on 999 Validation Lane. Each open blocker has its own Resolve action, and the guide says Send DA waits for them. The informational mentor-fee alert described above is not in this build.</figcaption></figure>
     </div>
     <div class="flow-step">
       <div class="step-label">Step 4 · Payout package</div>
       <h3>Build the payout from numbers already on the file</h3>
       <p>The package confirms payees, roles, amounts, and payment method, and checks that payees add up to the expected funds. Expected funds come from financials, so nothing is entered twice. A changed close date creates a new version, and the history stays on the file.</p>
-      <figure class="shot"><img src="../../assets/case/deal-desk/disbursement.webp" width="1600" height="956" alt="Disbursement tab with the authorization package, expected funds, and payees. Demo data." loading="lazy" decoding="async">
-        <figcaption>The payout package: template, closing entity, expected funds, and a payee total that has to match.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/disbursement.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/disbursement.webp" width="1920" height="1350" alt="Closing tab, Disbursement Authorization view, for 418 Alder Court: a banner reading All review gates cleared, ready for Disbursement Authorization; Review gates 5 of 5 cleared (documents reviewed, commission verified, checklist approved, title cleared, broker approval), each with a date; and a Payout breakdown from gross commission $15,360.00 less brokerage share and transaction fees to net to settle $11,171.80, with a Send Disbursement Authorization button. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The payout package in the design system, for 418 Alder Court. Every review gate is cleared, and the payout is built from the numbers already on the file, down to the net to settle.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/disbursement-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/disbursement-210.webp" width="2400" height="1433" alt="Disbursement tab for 210 Highline Ct: a draft Disbursement Authorization with the Standard DA template, closing entity Title company on file, payees eXp Realty $3,749.50 and Allison Reyes $14,700.50 by ACH, total to disburse $18,450.00, and no blockers. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The payout package for 210 Highline Ct: template, closing entity, payees with their payment method, and a total of $18,450.00 that matches the gross on the file.</figcaption></figure>
     </div>
     <div class="flow-step">
       <div class="step-label">Step 5 · Settlement</div>
       <h3>Wait for funds, then mark paid</h3>
       <p>Settlement adds the payment. A check read by document AI is tagged as extracted, and a row the analyst types is tagged as entered by them. The dates and the balance have to match before Settle unlocks. In the demo, a $500 underpayment is the case that should stop the file from being called balanced.</p>
-      <figure class="shot small"><img src="../../assets/case/deal-desk/ta-settle.webp" width="776" height="565" alt="Settlement tab while the file is awaiting funds, with expected and actual amounts. Demo data." loading="lazy" decoding="async">
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/settlement.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/settlement.webp" width="1920" height="1350" alt="Closing tab, Settlement view, for 418 Alder Court, status In Review for Settlement: Settlement summary with expected and received both $11,171.80, net to settle $11,171.80, authorization sent and settlement dates; and Reconciliation 4 of 4 matched, with gross commission, brokerage share, transaction fees, and net to settle each matched to the authorization. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Settlement in the design system, for 418 Alder Court. Expected and received sit side by side, and every line is matched back to the authorization.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/settlement-awaiting-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/settlement-awaiting-210.webp" width="2400" height="1550" alt="Settlement tab for 210 Highline Ct after the DA was sent: progress at Awaiting funds, expected 18450 and actual 18450, variance Balanced, and Settled by and Settled on still empty. Demo data." loading="lazy" decoding="async"></a>
         <figcaption>Waiting for funds, with expected and actual amounts side by side.</figcaption></figure>
-      <figure class="shot small" style="margin-top:20px"><img src="../../assets/case/deal-desk/ta-mark.webp" width="776" height="565" alt="Settlement ready to mark disbursed once funds are reconciled. Demo data." loading="lazy" decoding="async">
-        <figcaption>Ready to mark as paid once the funds match.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/settlement-reconciled-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/settlement-reconciled-210.webp" width="2400" height="1550" alt="Settlement for 210 Highline Ct with Awaiting funds, Funds received, and Reconciled complete and Disbursed still open, variance Balanced, settled by Transaction Analyst on Nov 1, 12:58 AM. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Reconciled and balanced. Disbursed is the one step left.</figcaption></figure>
     </div>
     <div class="flow-step">
       <div class="step-label">Step 6 · After payout</div>
       <h3>Locked, with a way to report problems</h3>
       <p>Once paid, the file is read-only and leaves the active queue. The analyst can report an issue, which flags it for production support and keeps the file locked. Today that flag is a manual report. The proposal from the demo is an automatic, time-limited flag that support clears when they mark the error handled, so the agent is not the first to notice.</p>
-      <figure class="shot small"><img src="../../assets/case/deal-desk/ta-after.webp" width="788" height="565" alt="Analyst queue after a file has been disbursed, with the demo path set to disbursed and file complete. Demo data." loading="lazy" decoding="async">
-        <figcaption>Back on the queue. The paid file is done, and the next one is the oldest that needs a person.</figcaption></figure>
+      <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/settlement-disbursed-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/settlement-disbursed-210.webp" width="2400" height="1550" alt="210 Highline Ct marked Disbursed: all six timeline steps complete, all four settlement steps done, Send DA disabled with the note DA already sent, and a Settlement: Disbursed message. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>Paid. Every step is complete, the balance is zero, and Send DA stays locked.</figcaption></figure>
     </div>
 
     <h3 class="sub">The agent views</h3>
     <p>The agent desk lives inside the agent platform, on the same visual system as staff. Home shows what needs the agent first, then an estimated commission with why it might change. The inbox is one conversation per deal. A deal can start from a document or from scratch: document AI reads what it can, the agent reviews it, then submits. A missing-document notice must open the filtered checklist; that was a confirmed bug in the old path, and it is a requirement here.</p>
-    <figure class="shot"><img src="../../assets/case/deal-desk/agent-deal.webp" width="1600" height="952" alt="Agent deal page with a status timeline from submitted to settlement disbursed, and the documents on the file. Demo data." loading="lazy" decoding="async">
-      <figcaption>The agent’s deal page. One status timeline from submitted, through the checklist and compliance, to payout. It is the same timeline staff see, and it answers “where is my deal?”</figcaption></figure>
+    <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v3/agent-deal.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v3/agent-deal.webp" width="1920" height="1350" alt="Agent deal page for 418 Alder Court, Springfield, status Under Broker Review: header with price $512,000, closing Nov 14, 2026, buyer, and seller; an Upload documents button; a What’s happening timeline from transaction created through broker review started; and People, Money, and Key items cards. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The agent’s deal page in the design system, for 418 Alder Court. What’s happening reads as a timeline, newest first, so the agent can see the deal is with the broker without asking.</figcaption></figure>
+    <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/agent-deal-disbursed-210.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/agent-deal-disbursed-210.webp" width="2400" height="1717" alt="Agent deal page for 210 Highline Ct, status Disbursed: header with agent Allison Reyes, buyer Jordan Kim, target close Oct 17, 2026, and sale price $615,000; a status timeline with all six steps complete; What’s happening shows Disbursed; People, Money with an estimated commission, and Key items. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The agent’s deal page for 210 Highline Ct. It shows the same six-step status timeline staff see, here complete through Disbursed, and it answers “where is my deal?”</figcaption></figure>
+    <figure class="shot"><a class="ss-link" href="../../assets/case/deal-desk/v2/agent-deal-compliance-742.webp" target="_blank" rel="noopener" aria-label="Open full-size screen in a new tab"><img class="ss" src="../../assets/case/deal-desk/v2/agent-deal-compliance-742.webp" width="2400" height="1708" alt="Agent deal page for 742 Evergreen Terrace at the Compliance step, status Needs review: What’s happening reads Compliance · Needs review, with buyers Homer &amp; Marge Simpson and sale price $575,000. Demo data." loading="lazy" decoding="async"></a>
+        <figcaption>The same page mid-flow. 742 Evergreen Terrace is at Compliance, and the agent can see that without asking.</figcaption></figure>
   </div>
 </div></section>
 
