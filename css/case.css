@@ -291,31 +291,6 @@
   font-family: var(--display);
 }
 
-.case-next {
-  display: grid;
-  gap: 10px;
-  margin-top: 110px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(43, 50, 54, 0.12);
-}
-
-.case-next a {
-  width: max-content;
-  max-width: 100%;
-  color: inherit;
-  font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-  text-decoration: none;
-}
-
-.case-next a:hover,
-.case-next a:focus-visible {
-  color: #b2512c;
-}
-
 .case-foot {
   display: flex;
   flex-wrap: wrap;
@@ -476,13 +451,6 @@ html {
   background-image: none;
 }
 
-.case-next a::after {
-  content: "\2192";
-  display: inline-block;
-  margin-left: 0.28em;
-  transition: transform 0.4s cubic-bezier(0.3, 1.4, 0.5, 1);
-}
-
 .case-steps li,
 .case-steps article,
 .case-split article,
@@ -505,11 +473,6 @@ html {
   .case-rail a:focus-visible {
     background-size: 0 0;
     color: var(--ink);
-  }
-
-  .case-next a:hover::after,
-  .case-next a:focus-visible::after {
-    transform: translateX(8px);
   }
 
   .case-steps li:hover,
@@ -559,9 +522,7 @@ html.has-case-motion .case-reveal:not(.case-hero) > .case-note,
 html.has-case-motion .case-reveal:not(.case-hero) > .case-ask,
 html.has-case-motion .case-reveal:not(.case-hero) > .case-quote,
 html.has-case-motion .case-meta > div,
-html.has-case-motion .case-foot > a,
-html.has-case-motion .case-next > a,
-html.has-case-motion .case-next > .case-copy {
+html.has-case-motion .case-foot > a {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.65s ease, transform 0.65s ease;
@@ -608,8 +569,6 @@ html.has-case-motion .case-reveal.is-in > .case-ask,
 html.has-case-motion .case-reveal.is-in > .case-quote,
 html.has-case-motion .case-meta.is-in > div,
 html.has-case-motion .case-foot.is-in > a,
-html.has-case-motion .case-next.is-in > a,
-html.has-case-motion .case-next.is-in > .case-copy,
 html.has-case-motion .case-reveal.is-in .case-num,
 html.has-case-motion .case-reveal.is-in :is(.case-list, .case-steps, .case-split, .case-pair, .case-themes, .case-chips, .case-band) > :is(li, article, p),
 html.has-case-motion .case-reveal.is-in > .case-frame,
@@ -750,7 +709,6 @@ html.has-case-motion .case-meta.is-in > div:nth-child(3) { transition-delay: 0.1
 
 @media (prefers-reduced-motion: reduce) {
   .case-rail-mark,
-  .case-next a::after,
   .case a,
   .case-frame img,
   .case-shot img,
@@ -786,8 +744,7 @@ html.has-case-motion .case-meta.is-in > div:nth-child(3) { transition-delay: 0.1
   .case-themes li:hover,
   .case-band p:hover,
   .case-frame:hover img,
-  .case-shot:hover img,
-  .case-next a:hover::after {
+  .case-shot:hover img {
     transform: none;
   }
 

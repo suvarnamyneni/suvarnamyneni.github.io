@@ -66,10 +66,6 @@ tr:last-child td{border-bottom:0}
 .metric .n{margin-top:6px;font-size:13px;color:var(--muted)}
 .dark{background:var(--dark);color:var(--dark-ink);border-top:0}
 .dark .head p,.dark .card p{color:#A9AFBC} .dark .card,.dark .metric{background:#181B23;border-color:#2A2E39}
-/* footer / next project */
-.cs-next{padding:64px 0 88px;border-top:1px solid var(--line)}
-.cs-next .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.cs-next a{display:block;font:700 24px var(--font-head);color:var(--ink)} .cs-next small{display:block;color:var(--muted);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
 .cs-foot{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
 @media (max-width:900px){
   .cs-section .head{grid-template-columns:1fr;gap:4px}.body{margin-left:0}
