@@ -853,6 +853,31 @@
   </div>
   <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
 
+  <style>
+    #work .project:not(.rail-end),
+    #also .desk-card { cursor: pointer; }
+  </style>
+  <script>
+    /* Whole project card opens its case study, same as its Read the case link. */
+    (function () {
+      document.addEventListener("click", function (event) {
+        var node = event.target;
+        if (!node || !node.closest || event.defaultPrevented || event.button !== 0) return;
+        if (node.closest("a, button, input, select, textarea, label, summary, [role='button']")) return;
+        var card = node.closest("#work .project:not(.rail-end), #also .desk-card");
+        if (!card) return;
+        var link = card.querySelector("a.case-link[href]");
+        var href = link && link.getAttribute("href");
+        if (!href || href.charAt(0) === "#") return;
+        if (window.getSelection && String(window.getSelection())) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey) {
+          window.open(link.href, "_blank", "noopener");
+          return;
+        }
+        link.click();
+      });
+    })();
+  </script>
   <script>
     (function () {
       if (!document.body.classList.contains("is-home")) {
