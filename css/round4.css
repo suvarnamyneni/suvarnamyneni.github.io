@@ -3897,3 +3897,23 @@ html.has-motion:not(.is-path-snap) #path .path-scrub button[aria-current="true"]
 /* Work path: logo, then title, then dates on the next line. */
 #path .path-copy .path-org { margin: 0 0 10px; }
 html body #path .path-ep .path-copy h3 + .path-when { display: inline-block; margin-top: 22px !important; margin-bottom: 8px; }
+
+/* Education: two entries side by side. */
+html body #education .path-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;align-items:start}
+html body #education .path-group-heading{grid-column:1 / -1}
+html body #education .path-ep + .path-ep{border-top:0}
+html.has-motion:not(.is-path-snap) body #education .path-ep,
+html.is-path-snap body #education .path-ep{grid-template-columns:minmax(120px,180px) minmax(0,1fr);column-gap:20px}
+@media (max-width:759px){
+  html body #education .path-group{grid-template-columns:minmax(0,1fr)}
+  html body #education .path-ep + .path-ep{border-top:1px solid rgba(163,71,40,.14)}
+}
+html body #education .path-yr{display:none}
+html body #education .path-art img{opacity:1 !important;visibility:visible !important}
+html body #education .path-group{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
+html.has-motion:not(.is-path-snap) body #education .path-ep,
+html.is-path-snap body #education .path-ep{grid-template-columns:minmax(0,1fr);row-gap:10px;justify-items:start;align-items:start}
+html body #education .path-art{max-width:170px !important}
+html body #education .path-art-flip img{transform:scaleX(-1)}
+@media (max-width:759px){html body #education .path-group{grid-template-columns:minmax(0,1fr)}
+html.has-motion:not(.is-path-snap) body #education .path-ep,html.is-path-snap body #education .path-ep{grid-template-columns:minmax(120px,150px) minmax(0,1fr);column-gap:16px;align-items:center}}
