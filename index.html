@@ -55,6 +55,11 @@
     .mode-switch a[aria-current="page"] { background: #fffdfb; color: #2b3236; }
     .mode-switch-dock { position: fixed; z-index: 22; left: 22px; bottom: calc(18px + env(safe-area-inset-bottom)); }
     .mode-switch-menu, .mode-switch-foot { display: none; }
+    .mode-hint { position: fixed; z-index: 22; left: 204px; bottom: calc(27px + env(safe-area-inset-bottom)); margin: 0; font: 500 12px/1.2 Switzer, sans-serif; color: #41484c; opacity: .85; pointer-events: none; white-space: nowrap; transition: opacity .3s ease, visibility .3s; }
+    .mode-hint-dock.is-gone { opacity: 0; visibility: hidden; }
+    .mode-hint-menu { display: none; }
+    @media (min-width: 901px) and (max-width: 1199px) { .mode-hint-dock { left: 26px; bottom: calc(62px + env(safe-area-inset-bottom)); } }
+    @media (max-width: 759px) { .mode-hint-dock { display: none; } .site-nav.is-open .mode-hint-menu { display: block; position: static; margin: 2px 0 4px; } }
     html .hero-stage { position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: #f1c0af; color: #2b3236; }
     html .scene, html .scene-bob, html .scene-tilt, html .scene-shift, html .scene picture, html .hero-scrim { position: absolute; inset: 0; width: 100%; height: 100%; }
     html .scene img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; aspect-ratio: 16 / 9; object-fit: cover; object-position: center center; }
@@ -202,6 +207,7 @@
           <a href="#top" aria-current="page">Interactive</a>
           <a href="https://motiveux.wixsite.com/my-site-3" rel="noopener" title="Classic portfolio on Wix">Classic</a>
         </div>
+        <p class="mode-hint mode-hint-menu">Explore in Classic or Interactive mode.</p>
       </div>
       <a class="nav-contact" href="assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
       <a class="nav-contact" href="#contact">Contact</a>
@@ -214,6 +220,16 @@
     <a href="#top" aria-current="page">Interactive</a>
     <a href="https://motiveux.wixsite.com/my-site-3" rel="noopener" title="Classic portfolio on Wix">Classic</a>
   </div>
+  <p class="mode-hint mode-hint-dock">Explore in Classic or Interactive mode.</p>
+  <script>
+    (function () {
+      var hint = document.querySelector(".mode-hint-dock");
+      if (!hint) return;
+      var sync = function () { hint.classList.toggle("is-gone", window.scrollY > 40); };
+      sync();
+      window.addEventListener("scroll", sync, { passive: true });
+    })();
+  </script>
   <div class="nav-backdrop" hidden></div>
   <div class="mobile-top-fade" aria-hidden="true"></div>
 
