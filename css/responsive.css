@@ -61,7 +61,6 @@ p a[href^="mailto:"], li a[href^="mailto:"] { overflow-wrap: anywhere; }
   .contact-scene .bar-address { overflow-wrap: anywhere; }
 }
 @media (max-width: 359px) {
-  .contact-scene .contact-copy { top: calc(env(safe-area-inset-top) + 132px); }
   .contact-scene .contact-copy h2 { font-size: 30px; }
   .contact-scene .contact-copy p { margin-top: 10px; font-size: 14.5px; line-height: 1.45; }
   .contact-scene .steps { gap: 6px; margin-top: 14px; }

@@ -795,7 +795,30 @@
       starCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
+    // Phones under 390px: give the slingshot and mailbox their own band between
+    // the copy (with its steps) and the email bar, growing the scene if needed.
+    const FIT_BAND = 236;
+    let fitBottom = null;
+    function fitNarrow() {
+      fitBottom = null;
+      if (band.style.minHeight) band.style.minHeight = "";
+      const rect = section.getBoundingClientRect();
+      if (rect.width >= 390) return null;
+      const copy = section.querySelector(".contact-copy");
+      const bar = section.querySelector(".email-bar");
+      if (!copy || !bar) return null;
+      const top = copy.getBoundingClientRect().bottom - rect.top + 10;
+      const room = bar.getBoundingClientRect().top - rect.top - 8 - top;
+      if (room < FIT_BAND) {
+        band.style.minHeight = `${Math.ceil(band.getBoundingClientRect().height + FIT_BAND - room)}px`;
+      }
+      const r2 = section.getBoundingClientRect();
+      fitBottom = bar.getBoundingClientRect().top - r2.top - 8;
+      return { top, bottom: fitBottom };
+    }
+
     function measure() {
+      const fit = fitNarrow();
       const rect = section.getBoundingClientRect();
       W = Math.max(1, rect.width);
       H = Math.max(1, rect.height);
@@ -806,8 +829,12 @@
       const narrow = W < 700;
       const mailW = Math.min(230, Math.max(128, W * (narrow ? 0.34 : 0.16)));
       const mailH = mailW * (720 / 514);
-      const mailLeft = narrow ? W * 0.58 : W * 0.74;
-      const mailTop = (narrow ? H * 0.86 : H * 0.82) - mailH;
+      let mailLeft = narrow ? W * 0.58 : W * 0.74;
+      let mailTop = (narrow ? H * 0.86 : H * 0.82) - mailH;
+      if (fit) {
+        mailLeft = Math.min(mailLeft, W - mailW - 6);
+        mailTop = fit.bottom - mailH;
+      }
       mb = {
         x1: mailLeft + mailW * 0.22,
         y1: mailTop + mailH * 0.18,
@@ -822,6 +849,14 @@
       mb.cy = (mb.y1 + mb.y2) / 2;
       anchor.x = narrow ? W * 0.3 : W * 0.17;
       anchor.y = narrow ? H * 0.72 : H * 0.7;
+      if (fit) {
+        const pw = planeWidth();
+        const fork = sprites.fork;
+        const ratio = spriteReady(fork) ? fork.naturalHeight / fork.naturalWidth : 1022 / 607;
+        const forkTop = fit.top + 34;
+        const forkH = Math.max(60, Math.min(pw * 2.35 * ratio, fit.bottom - forkTop));
+        anchor.y = forkTop + FORK_POCKET.y * forkH - Math.sin(0.35) * pw * 0.18;
+      }
       gravity = 1000 * (H / 900);
       pullMax = Math.min(150, Math.max(90, W * 0.1));
       const reach = Math.max(200, mb.cx - anchor.x);
@@ -1106,7 +1141,7 @@
       let drawW = width * 2.35;
       let drawH = drawW * ratio;
       const pocket = restPocket();
-      const maxBottom = H - 6;
+      const maxBottom = fitBottom != null ? fitBottom : H - 6;
       if (pocket.y + drawH * (1 - FORK_POCKET.y) > maxBottom) {
         drawH = (maxBottom - pocket.y) / (1 - FORK_POCKET.y);
         drawW = drawH / ratio;
