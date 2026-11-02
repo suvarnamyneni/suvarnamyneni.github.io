@@ -1,0 +1,84 @@
+/* responsive.css (2026-11-02): small, additive fixes so every page fits
+   phones (incl. 280px Galaxy Fold cover), foldables, tablets and big desktops.
+   Loaded last; it only adjusts sizing/wrapping, never content. */
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+p, li, dd, dt, td, th, figcaption, blockquote { overflow-wrap: break-word; }
+p a[href^="mailto:"], li a[href^="mailto:"] { overflow-wrap: anywhere; }
+
+/* Header: keep the Menu button on screen on narrow phones.
+   Resume and Contact stay reachable inside the menu. */
+@media (max-width: 389px) {
+  .site-header .site-nav .nav-contact[download] { display: none; }
+}
+@media (max-width: 359px) {
+  .site-header .site-nav .nav-contact { display: none; }
+  .site-header { gap: 8px; }
+}
+
+/* Section heads ("Selected work", "Also on the desk"): stack title and note on phones. */
+@media (max-width: 429px) {
+  .section-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .section-head p, .section-head .section-sub { max-width: none; }
+}
+
+/* Hero "Scroll into the laptop / jump to the work" pill: wrap instead of clipping. */
+@media (max-width: 359px) {
+  .scroll-pill {
+    white-space: normal;
+    flex-wrap: wrap;
+    row-gap: 2px;
+    justify-content: center;
+    text-align: center;
+    max-width: calc(100vw - 24px);
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+}
+
+/* Education: smaller art column on narrow phones so titles are not clipped. */
+@media (max-width: 429px) {
+  html.has-motion:not(.is-path-snap) body #education .path-ep,
+  html.is-path-snap body #education .path-ep,
+  html body #education .path-ep {
+    grid-template-columns: minmax(72px, 30vw) minmax(0, 1fr);
+    column-gap: 14px;
+  }
+  html body #education .path-art { max-width: 30vw !important; }
+  #education .path-copy h3 { overflow-wrap: break-word; hyphens: auto; }
+}
+
+/* Contact scene: keep the email bar inside the screen on narrow phones. */
+@media (max-width: 374px) {
+  .contact-scene .email-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 2px;
+    border-radius: 22px;
+    max-width: calc(100% - 16px);
+  }
+  .contact-scene .bar-mail { flex: 1 1 100%; justify-content: center; }
+  .contact-scene .bar-address { overflow-wrap: anywhere; }
+}
+@media (max-width: 359px) {
+  .contact-scene .contact-copy { top: calc(env(safe-area-inset-top) + 132px); }
+  .contact-scene .contact-copy h2 { font-size: 30px; }
+  .contact-scene .contact-copy p { margin-top: 10px; font-size: 14.5px; line-height: 1.45; }
+  .contact-scene .steps { gap: 6px; margin-top: 14px; }
+  .contact-scene .steps li { font-size: 12px; padding: 4px 9px 4px 4px; }
+}
+
+/* Case pages: images keep their aspect ratio when the column narrows. */
+:where(main.case) img { max-width: 100%; height: auto; }
+
+/* Work timeline logos: never squash a wide logo. */
+#path .path-logo { object-fit: contain; object-position: left center; }
+
+/* Touch screens: larger hit area for section tabs, case nav and footer links (layout unchanged). */
+@media (pointer: coarse) {
+  nav.cs-nav a, .case-rail a, .sm-footer-links a { position: relative; }
+  nav.cs-nav a::after, .case-rail a::after, .sm-footer-links a::after {
+    content: ""; position: absolute; left: 0; right: 0; top: 50%;
+    height: 44px; min-height: 100%; transform: translateY(-50%);
+  }
+}
