@@ -923,8 +923,12 @@
     });
   }
 
+  function swipeWork() {
+    return document.documentElement.classList.contains("is-swipe-work");
+  }
+
   function bindDrag() {
-    if (!rail || rail.dragReady) return;
+    if (!rail || rail.dragReady || swipeWork()) return;
     rail.dragReady = true;
     let active = false;
     let startX = 0;
@@ -1115,6 +1119,9 @@
     bindDrag();
 
     if (!stack && window.ScrollTrigger && rail) {
+      if (swipeWork()) {
+        rail.track.style.transform = "";
+      } else {
       buildRailPath();
       railTrigger = window.ScrollTrigger.create({
         trigger: rail.stage,
@@ -1130,6 +1137,7 @@
         onUpdate: (self) => applyRail(self.progress),
       });
       applyRail(0);
+      }
       if (pathUI) {
         buildPathCurve();
         const travel = Math.round(window.innerHeight * pathUI.items.length * 0.9);
@@ -1194,6 +1202,10 @@
     const card = document.getElementById(id);
     if (!card) return;
     const stack = document.documentElement.classList.contains("is-stack");
+    if (swipeWork() && rail && cards.includes(card)) {
+      if (window.swipeWorkTo) window.swipeWorkTo(card);
+      return;
+    }
     if (!stack && railTrigger && rail && cards.includes(card)) {
       const progress = clamp01((card.offsetLeft - 28) / Math.max(1, rail.distance));
       const y = railTrigger.start + (railTrigger.end - railTrigger.start) * progress;

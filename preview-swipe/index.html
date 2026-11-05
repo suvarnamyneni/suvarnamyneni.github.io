@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add("is-swipe-work");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suvarna Myneni, AI-Native UX Designer</title>
+  <meta name="description" content="AI-Native UX Designer in Hyderabad. 8+ years across eXp Realty, Amazon and ICICI Bank. I design AI that knows when to hand off to a human.">
+  <base href="/">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FDF0E2">
+  <meta property="og:title" content="Suvarna Myneni, AI-Native UX Designer">
+  <meta property="og:description" content="AI-Native UX Designer in Hyderabad. 8+ years across eXp Realty, Amazon and ICICI Bank. I design AI that knows when to hand off to a human.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suvarnamyneni.github.io/">
+  <meta property="og:image" content="https://suvarnamyneni.github.io/assets/art/hero-1280.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="A painted desk on a grassy island under a pink sky, with a laptop, coffee, notebooks, a phone and a plant.">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suvarna Myneni, AI-Native UX Designer">
+  <meta name="twitter:description" content="AI-Native UX Designer in Hyderabad. 8+ years across eXp Realty, Amazon and ICICI Bank.">
+  <meta name="twitter:image" content="https://suvarnamyneni.github.io/assets/art/hero-1280.jpg">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/general-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/switzer-600.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face { font-family: "General Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/general-sans-600.woff2") format("woff2"); }
+    @font-face { font-family: Switzer; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/switzer-400.woff2") format("woff2"); }
+    @font-face { font-family: Switzer; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/switzer-600.woff2") format("woff2"); }
+    :root { --ink: #2b3236; --muted: #41484c; --accent: #a34728; --paper: #fdf0e2; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #fdf0e2; color: #2b3236; font-family: Switzer, "Segoe UI", sans-serif; font-size: 1.0625rem; line-height: 1.5; }
+    img { max-width: 100%; display: block; }
+    h1, p { margin: 0; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: 16px; top: -48px; }
+    html .site-header { position: fixed; z-index: 20; inset: 16px 22px auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0; background: none; pointer-events: none; color: #2b3236; }
+    html .site-header > * { pointer-events: auto; }
+    .brand-chip, .site-nav { display: flex; align-items: center; border-radius: 999px; text-decoration: none; color: #2b3236; background: rgba(255,251,247,.38); border: 1px solid rgba(255,255,255,.55); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 28px rgba(150,90,70,.12); }
+    html .brand-chip { flex-direction: row; align-items: center; gap: 10px; padding: 5px 16px 5px 5px; }
+    .brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center center; box-shadow: 0 0 0 2px rgba(255,255,255,.9); }
+    .brand-name { font-family: "General Sans", Switzer, sans-serif; font-weight: 600; font-size: 14.5px; letter-spacing: -0.01em; line-height: 1.15; }
+    .brand-role { font-size: 12px; font-weight: 500; line-height: 1.15; color: #41484c; }
+    .brand-back { font-size: 12px; font-weight: 600; line-height: 1.15; color: #b2512c; }
+    body.is-home .brand-back, body:not(.is-home) .brand-role { display: none; }
+    .site-nav { position: relative; width: max-content; gap: 2px; padding: 5px; }
+    .nav-menu { display: flex; align-items: center; gap: 2px; width: max-content; padding: 0; margin: 0; border: 0; background: transparent; box-shadow: none; }
+    .site-nav a, .nav-toggle { color: #2b3236; text-decoration: none; font: 500 14px/normal Switzer, sans-serif; padding: 7px 14px; border-radius: 999px; background: transparent; border: 0; }
+    .nav-menu a { display: inline-flex; align-items: center; min-height: 0; }
+    .nav-contact, .nav-toggle, .nav-cv, .nav-cv[hidden] { display: none; }
+    .mode-switch { display: flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(255,251,247,.92); border: 1px solid rgba(255,255,255,.7); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 22px rgba(150,90,70,.14); }
+    .mode-switch a { padding: 6px 12px; font-size: 13px; font-weight: 500; line-height: 1.2; border-radius: 999px; color: #41484c; text-decoration: none; }
+    .mode-switch a[aria-current="page"] { background: #fffdfb; color: #2b3236; }
+    .mode-switch-dock { position: fixed; z-index: 22; left: 22px; bottom: calc(18px + env(safe-area-inset-bottom)); }
+    .mode-switch-menu, .mode-switch-foot { display: none; }
+    .mode-hint { position: fixed; z-index: 22; left: 204px; bottom: calc(27px + env(safe-area-inset-bottom)); margin: 0; font: 500 12px/1.2 Switzer, sans-serif; color: #41484c; opacity: .85; pointer-events: none; white-space: nowrap; transition: opacity .3s ease, visibility .3s; }
+    .mode-hint-dock.is-gone { opacity: 0; visibility: hidden; }
+    .mode-hint-menu { display: none; }
+    @media (min-width: 901px) and (max-width: 1199px) { .mode-hint-dock { left: 26px; bottom: calc(62px + env(safe-area-inset-bottom)); } }
+    @media (max-width: 759px) { .mode-hint-dock { display: none; } .site-nav.is-open .mode-hint-menu { display: block; position: static; margin: 2px 0 4px; } }
+    html .hero-stage { position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: #f1c0af; color: #2b3236; }
+    html .scene, html .scene-bob, html .scene-tilt, html .scene-shift, html .scene picture, html .hero-scrim { position: absolute; inset: 0; width: 100%; height: 100%; }
+    html .scene img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; aspect-ratio: 16 / 9; object-fit: cover; object-position: center center; }
+    html .hero-copy { position: absolute; z-index: 5; display: block; grid-template-columns: none; left: 0; right: 0; transform: none; width: auto; top: calc(10vh + 6px); text-align: center; padding: 0 5vw; }
+    html .hero-copy h1 { max-width: 14em; margin: 0 auto; font-family: "General Sans", Switzer, sans-serif; font-weight: 600; font-size: clamp(34px, 4.3vw, 64px); letter-spacing: -.035em; line-height: 1.02; color: #2b3236; text-shadow: none; text-wrap: balance; }
+    html .hero-sub, html .hero-sub strong { font-family: Switzer, "Segoe UI", sans-serif; font-synthesis: none; }
+    html .hero-sub { position: static; left: auto; right: auto; bottom: auto; margin: 14px auto 0; max-width: 800px; padding: 0; background: none; border: 0; box-shadow: none; font-size: clamp(15px, 1.15vw, 17px); font-weight: 400; line-height: 1.5; color: #41484c; text-shadow: none; text-wrap: balance; }
+    html .hero-sub strong { color: #2b3236; font-weight: 600; }
+    .scroll-pill { position: absolute; z-index: 6; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 8px 14px 8px 12px; border-radius: 999px; background: rgba(255,251,247,.38); color: #2b3236; font-size: 13px; font-weight: 500; white-space: nowrap; width: max-content; max-width: calc(100% - 32px); min-width: 0; }
+    .scroll-pill a { color: #a34728; font-weight: 600; }
+    .scroll-mouse, .scroll-mouse svg { width: 14px; height: 20px; display: block; flex: none; }
+    .scroll-rule { width: 1px; align-self: stretch; background: rgba(43,50,54,.22); }
+    .hover-hint, .spot-card, .sky-drift, .desk-fx, .glide-plane { position: absolute; pointer-events: none; }
+    .sky-drift, .desk-fx { inset: 0; overflow: hidden; }
+    .cloud, .petal, .steam, .screen-glow, .glide-plane { position: absolute; }
+    .glide-plane { width: 46px; height: 46px; left: -6%; top: 24%; }
+    .glide-plane svg { width: 100%; height: 100%; display: block; }
+    .spot-card { opacity: 0; }
+    .hover-hint { left: 50%; bottom: calc(122px + env(safe-area-inset-bottom)); transform: translateX(-50%); margin: 0; padding: 7px 12px; border-radius: 999px; font-size: .8rem; font-weight: 600; line-height: 1.2; white-space: nowrap; width: max-content; }
+    @media (min-width: 901px) {
+      .hover-hint { display: none; }
+    }
+    html.is-stack .scene-bob { animation: none !important; }
+    .hotspot { position: absolute; box-sizing: border-box; border: 2px solid transparent; border-radius: 16px; background: transparent; box-shadow: none; outline: none; }
+    html .hotspot-screen { left: 46.13%; top: 44.26%; width: 10.17%; height: 11.86%; z-index: 5; }
+    html .hotspot-plane { left: 12.6%; top: 69.3%; width: 14%; height: 7.6%; }
+    html .hotspot-keys { left: 43%; top: 59.8%; width: 14.1%; height: 8%; z-index: 5; }
+    html .hotspot-coffee { left: 37.6%; top: 54.4%; width: 5%; height: 7.8%; z-index: 4; }
+    html .hotspot-sketch { left: 35.1%; top: 61.8%; width: 9.9%; height: 12%; }
+    html .hotspot-notebook { left: 45.4%; top: 68%; width: 11%; height: 6.2%; z-index: 4; }
+    html .hotspot-glass { left: 56.4%; top: 62.6%; width: 7%; height: 10.3%; z-index: 4; }
+    html .hotspot-phone { left: 63.1%; top: 57.6%; width: 5.1%; height: 12.2%; z-index: 5; }
+    html .hotspot-kit { left: 57.3%; top: 46.9%; width: 8.5%; height: 15.3%; }
+    html .hotspot-plant { left: 65.6%; top: 52.4%; width: 5.1%; height: 12%; z-index: 4; }
+    @media (max-width: 600px) {
+      html .hotspot-screen { left: 40.85%; top: 52.85%; width: 19.64%; height: 7.69%; }
+      html .hotspot-plane { left: 0; top: 0; width: 0; height: 0; }
+      html .hotspot-keys { left: 42.6%; top: 62.8%; width: 22.8%; height: 5.2%; }
+      html .hotspot-coffee { left: 24%; top: 58%; width: 12%; height: 6.5%; }
+      html .hotspot-sketch { left: 19%; top: 65.6%; width: 20.2%; height: 5.9%; }
+      html .hotspot-notebook { left: 39.7%; top: 68.2%; width: 21.9%; height: 4.3%; }
+      html .hotspot-glass { left: 61.4%; top: 64.2%; width: 14.1%; height: 7.2%; }
+      html .hotspot-phone { left: 72.5%; top: 59.7%; width: 10.3%; height: 9.1%; }
+      html .hotspot-kit { left: 61.6%; top: 55.2%; width: 13.9%; height: 8.3%; }
+      html .hotspot-plant { left: 76.1%; top: 57.8%; width: 12%; height: 7.5%; }
+    }
+    .hero-spacer { display: none; }
+    .veil, .hotspots, .seed-field { position: absolute; inset: 0; pointer-events: none; }
+    .unfold { position: absolute; z-index: 4; overflow: hidden; pointer-events: none; }
+    html.is-stack #unfold { display: block; }
+    @media (max-width: 900px) {
+      html.is-stack .scene-shift { transform: none; transform-origin: 50% 0; }
+      html .hero-copy { left: 0; right: 0; width: auto; top: 10vh; padding: 0 20px; text-align: center; }
+      html .hero-copy h1 { max-width: 14em; margin: 0 auto; font-size: 33px; line-height: 1.02; letter-spacing: -.035em; }
+      html .hero-sub { margin: 14px auto 0; max-width: 800px; padding: 0; background: none; border: 0; box-shadow: none; font-size: 14.5px; line-height: 1.5; color: #41484c; }
+      .scroll-pill { bottom: 70px; gap: 8px; padding: 8px 14px 8px 12px; font-size: 13px; line-height: 1.2; width: max-content; min-width: 0; max-width: calc(100vw - 20px); }
+    }
+    @media (max-width: 759px) {
+      html .site-header { left: 12px; right: 12px; top: 12px; flex-wrap: nowrap; }
+      .brand-role, .brand-last, .nav-menu, .mode-switch-dock { display: none; }
+      body:not(.is-home) .brand-back { display: block; }
+      .brand-name { font-size: 14px; }
+      .brand-avatar { width: 32px; height: 32px; }
+      html .brand-chip { flex-shrink: 0; }
+      .site-nav { padding: 4px; background: rgba(255,250,245,.94); }
+      .nav-contact, .nav-toggle { display: inline-flex; align-items: center; min-height: 0; padding: 7px 12px; }
+      html .hero-copy { left: 0; right: 0; top: 10vh; padding: 0 20px; width: auto; transform: none; text-align: center; }
+    }
+    .night-band { position: relative; height: 100svh; min-height: 660px; overflow: hidden; background: #f6d9bc; }
+    .night-band .sky-layer, .night-band .star-field, .night-band .plane-canvas, #contact.contact-scene { position: absolute; inset: 0; }
+    .night-band .sky-layer picture, .night-band .sky-layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .cloud-drift { position: absolute; z-index: 1; left: -4%; right: -4%; bottom: 0; height: 46%; overflow: hidden; pointer-events: none; }
+    @media (max-width: 430px) {
+      .contact-scene .contact-copy { top: calc(env(safe-area-inset-top) + 168px); }
+    }
+  </style>
+  <link rel="stylesheet" href="css/sm-footer.css?v=20261101d">
+  <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/effects.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/round4.css?v=20261101e" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/responsive.css?v=20261105swipe" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/round4.css?v=20261101e">
+    <link rel="stylesheet" href="css/responsive.css?v=20261105swipe">
+  </noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Suvarna Myneni",
+    "jobTitle": "AI-Native UX Designer",
+    "email": "mailto:suvarnamyneni@gmail.com",
+    "url": "https://suvarnamyneni.github.io/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/suvarnamyneni/",
+      "https://motiveux.wixsite.com/my-site-3"
+    ]
+  }
+  </script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var stack = window.matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+      root.classList.toggle("is-stack", stack || reduce);
+      root.classList.toggle("has-rail", !stack && !reduce);
+      if (reduce || stack) root.classList.add("is-path-snap");
+      if (!reduce) root.classList.add("has-motion");
+      if (reduce || stack) {
+        root.classList.add("ready");
+        return;
+      }
+      var screens = 1.35;
+      root.classList.add("has-zoom");
+      root.style.setProperty("--vh", window.innerHeight + "px");
+      root.style.setProperty("--spacer", (screens + 1) * window.innerHeight + "px");
+      setTimeout(function () { root.classList.add("ready"); }, 1600);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/swipe-work.css?v=20261105a">
+</head>
+<body class="is-home">
+  <a class="skip-link" href="#work">Skip to work</a>
+  <header class="site-header">
+    <a class="brand-chip" href="#top" data-caption="Suvarna Myneni">
+      <img class="brand-avatar" src="assets/avatar-96.webp" width="36" height="36" alt="" decoding="async" fetchpriority="low">
+      <span class="brand-copy">
+        <b class="brand-name">Suvarna <span class="brand-last">Myneni</span></b>
+        <small class="brand-role">AI-Native UX Designer</small>
+        <small class="brand-back">← Back to all work</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <div id="nav-menu" class="nav-menu">
+        <a href="#work" data-caption="Selected work">Work</a>
+        <a href="#path" data-caption="Path">Path</a>
+        <a href="#about" data-caption="About">About</a>
+        <a href="assets/Suvarna-Myneni-Resume.pdf" download data-caption="Resume">Resume</a>
+        <a href="#contact" data-caption="Contact">Contact</a>
+        <div class="mode-switch mode-switch-menu" role="group" aria-label="Portfolio">
+          <a href="#top" aria-current="page">Interactive</a>
+          <a href="https://motiveux.wixsite.com/my-site-3" rel="noopener" title="Classic portfolio on Wix">Classic</a>
+        </div>
+        <p class="mode-hint mode-hint-menu">Explore in Classic or Interactive mode.</p>
+      </div>
+      <a class="nav-contact" href="assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
+      <a class="nav-contact" href="#contact">Contact</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        Menu
+      </button>
+    </nav>
+  </header>
+  <div class="mode-switch mode-switch-dock" role="group" aria-label="Portfolio">
+    <a href="#top" aria-current="page">Interactive</a>
+    <a href="https://motiveux.wixsite.com/my-site-3" rel="noopener" title="Classic portfolio on Wix">Classic</a>
+  </div>
+  <p class="mode-hint mode-hint-dock">Explore in Classic or Interactive mode.</p>
+  <script>
+    (function () {
+      var hint = document.querySelector(".mode-hint-dock");
+      if (!hint) return;
+      var sync = function () { hint.classList.toggle("is-gone", window.scrollY > 40); };
+      sync();
+      window.addEventListener("scroll", sync, { passive: true });
+    })();
+  </script>
+  <div class="nav-backdrop" hidden></div>
+  <div class="mobile-top-fade" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero-stage" id="top">
+      <div class="scene">
+        <div class="scene-bob">
+          <div class="sky-wash" aria-hidden="true"></div>
+          <div class="sky-drift" aria-hidden="true">
+            <i class="cloud c1"></i>
+            <i class="cloud c2"></i>
+            <i class="cloud c3"></i>
+            <i class="petal p1"></i>
+            <i class="petal p2"></i>
+            <i class="petal p3"></i>
+            <i class="petal p4"></i>
+            <i class="petal p5"></i>
+          </div>
+          <div class="scene-tilt">
+          <div class="scene-shift">
+            <picture>
+              <source media="(max-width: 600px)" type="image/webp" srcset="assets/art/hero-mobile-540.webp 540w, assets/art/hero-mobile.webp 1080w" sizes="100vw">
+              <source media="(max-width: 600px)" srcset="assets/art/hero-mobile-540.jpg 540w, assets/art/hero-mobile.jpg 1080w" sizes="100vw">
+              <source type="image/webp" srcset="assets/art/hero-800.webp 800w, assets/art/hero-1280.webp 1280w, assets/art/hero.webp 2400w" sizes="100vw">
+              <img
+                src="assets/art/hero-800.jpg"
+                srcset="assets/art/hero-800.jpg 800w, assets/art/hero-1280.jpg 1280w, assets/art/hero.jpg 2400w"
+                sizes="100vw"
+                width="2400"
+                height="1350"
+                alt="A painted wooden desk on a grassy island in a wide peach sky, with a laptop, coffee, notebooks, a phone and a plant."
+                fetchpriority="high"
+                decoding="async"
+              >
+            </picture>
+            <div class="hero-scrim" aria-hidden="true"></div>
+            <div class="desk-fx" aria-hidden="true">
+              <span class="screen-glow"></span>
+              <span class="steam"><i></i><i></i><i></i></span>
+              <span class="glide-plane">
+                <svg viewBox="0 0 64 64"><path d="M6 34 L58 8 L36 58 L28 36 Z" fill="#FFFDFB" stroke="#2B3236" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 36 L58 8" fill="none" stroke="#A34728" stroke-width="2"/></svg>
+              </span>
+            </div>
+            <div class="unfold" id="unfold" aria-hidden="true">
+              <div class="unfold-plane" id="unfold-plane">
+                <div class="unfold-fit" id="unfold-fit"></div>
+              </div>
+            </div>
+            <div class="hotspots">
+              <a class="hotspot hotspot-plane" href="#path" data-label="Plane" data-story="Follow the path so far."><span class="sr-only">Plane. Follow the path so far.</span></a>
+              <a class="hotspot hotspot-screen" href="#work" data-label="Screen" data-story="Where the work lives. Scroll in to see my selected projects."><span class="sr-only">Screen. Where the work lives. Scroll in to see my selected projects.</span></a>
+              <a class="hotspot hotspot-keys" href="#work" data-label="Keyboard" data-story="I prototype what I design, in Figma, Lovable and code."><span class="sr-only">Keyboard. I prototype what I design, in Figma, Lovable and code.</span></a>
+              <a class="hotspot hotspot-coffee" href="#contact" data-label="Coffee" data-story="Always up for a chat about design. Say hi."><span class="sr-only">Coffee. Always up for a chat about design. Say hi.</span></a>
+              <a class="hotspot hotspot-sketch" href="#path" data-label="Sketchbooks" data-story="Postgraduate in Design, Manipal University."><span class="sr-only">Sketchbooks. Postgraduate in Design, Manipal University.</span></a>
+              <a class="hotspot hotspot-notebook" href="https://suvarnamyneni.github.io/imobile-case-study/" target="_blank" rel="noopener" data-card="imobile" data-label="Notebook" data-story="Research first: 15 interviews and 3 personas for iMobile."><span class="sr-only">Notebook. Research first: 15 interviews and 3 personas for iMobile.</span></a>
+              <a class="hotspot hotspot-glass" href="https://suvarnamyneni.github.io/my-exp-mira-case-study/" target="_blank" rel="noopener" data-label="Magnifier" data-story="Designing an AI assistant, Mira, that knows when to hand off to a human."><span class="sr-only">Magnifier. Designing an AI assistant, Mira, that knows when to hand off to a human.</span></a>
+              <a class="hotspot hotspot-kit" href="/work/deal-desk/" data-card="deal-desk" data-label="Components" data-story="Deal Desk: one AI-native desk from submitted to paid."><span class="sr-only">Components. Deal Desk: one AI-native desk from submitted to paid.</span></a>
+              <a class="hotspot hotspot-phone" href="https://suvarnamyneni.github.io/imobile-case-study/" target="_blank" rel="noopener" data-label="Phone" data-story="Redesigning the iMobile banking app at ICICI Bank."><span class="sr-only">Phone. Redesigning the iMobile banking app at ICICI Bank.</span></a>
+              <a class="hotspot hotspot-plant" href="#about" data-label="Plant" data-story="Growing designers: I've mentored 5 junior designers."><span class="sr-only">Plant. Growing designers: I've mentored 5 junior designers.</span></a>
+            </div>
+          </div>
+          </div>
+          <canvas class="seed-field" id="seed-field" aria-hidden="true"></canvas>
+        </div>
+      </div>
+      <div class="veil" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1>I design AI that knows when to hand off to a human.</h1>
+        <p class="hero-sub"><strong>AI-Native UX Designer</strong> in <strong>Hyderabad</strong>, with <strong>8+ years</strong> across <strong>eXp Realty</strong>, <strong>Amazon</strong> and <strong>ICICI Bank</strong>. I lead the work from research to AI workflows. The objects on this desk open it.</p>
+      </div>
+      <p class="seed-skill glass-float" id="seed-skill" hidden></p>
+      <p class="hover-hint" id="hover-hint">Hover the objects</p>
+      <p class="scroll-pill glass-float">
+        <span class="scroll-mouse" aria-hidden="true"><svg viewBox="0 0 16 24" width="14" height="20"><rect x="1.4" y="1.4" width="13.2" height="21.2" rx="6.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 6.2v3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <span class="scroll-pill-label">Scroll into the laptop</span>
+        <span class="scroll-rule" aria-hidden="true"></span>
+        <a href="#work">or jump to the work <span aria-hidden="true">→</span></a>
+      </p>
+      <div class="spot-card" id="spot-card" aria-hidden="true">
+        <p class="spot-label"></p>
+        <p class="spot-story"></p>
+      </div>
+    </section>
+    <div class="hero-spacer" aria-hidden="true"></div>
+
+    <section class="panel" id="work" aria-labelledby="work-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="work-heading">Selected work</h2>
+          <p>Four projects, first to latest.</p>
+        </div>
+        <article class="project feature-lead reveal" id="imobile" data-cursor-icon="phone" data-stamp="Oct 2018 – Aug 2020">
+          <div class="thumb art-slot t1" data-art="imobile">
+            <picture>
+              <source type="image/webp" srcset="assets/art/imobile.webp">
+              <img src="assets/art/imobile.jpg" alt="A phone, a piggy bank and coins on a small island." width="880" height="503" loading="lazy" decoding="async">
+            </picture>
+            <span class="org-pill">ICICI Bank, Oct 2018 – Aug 2020</span>
+          </div>
+          <div class="project-body">
+            <h3>Revamping iMobile application</h3>
+            <p>Revamped ICICI Bank's iOS app, iMobile, as a UX Designer, ensuring an intuitive and delightful banking experience for diverse users.</p>
+            <p class="metric">
+              <span class="metric-num" data-value="15">15</span>
+              <span class="metric-label">interviews,</span>
+              <span class="metric-num" data-value="3">3</span>
+              <span class="metric-label">personas</span>
+            </p>
+            <a class="case-link" href="https://suvarnamyneni.github.io/imobile-case-study/" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: Revamping iMobile application (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </article>
+        <article class="project feature reveal" data-cursor-icon="chat" data-stamp="2023–present">
+          <div class="thumb art-slot t3" data-art="myexp-mira">
+            <picture>
+              <source type="image/webp" srcset="assets/art/myexp-mira.webp">
+              <img src="assets/art/myexp-mira.jpg" alt="A monitor opening onto a portal, with a glowing chat bubble." width="880" height="503" loading="lazy" decoding="async">
+            </picture>
+            <span class="org-pill">eXp Realty, 2023–present</span>
+          </div>
+          <div class="project-body">
+            <h3>My eXp + Mira: One front door for new agents</h3>
+            <p>As AI UI/UX Designer, I designed My eXp, a single hub for new eXp Realty agents, and Mira, an AI assistant that answers from the agent's own data and hands off to a person when needed.</p>
+            <p class="outcome">AI automation for document review, data entry and compliance</p>
+            <a class="case-link" href="https://suvarnamyneni.github.io/my-exp-mira-case-study/" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: My eXp + Mira (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </article>
+        <article class="project feature reveal" id="deal-desk" data-cursor-icon="desk" data-stamp="2023–present">
+          <div class="thumb art-slot t2" data-art="deal-desk">
+            <picture>
+              <source type="image/webp" srcset="assets/art/deal-desk.webp">
+              <img src="assets/art/deal-desk.jpg" alt="A pastel pipeline in a browser window, with documents, a stamp, a key and a house." width="880" height="503" loading="lazy" decoding="async">
+            </picture>
+            <span class="org-pill">eXp Realty, 2023–present</span>
+          </div>
+          <div class="project-body">
+            <h3>Deal Desk: One AI-assisted desk for transactions</h3>
+            <p>A team project at eXp Realty. As AI UI/UX Designer, I mapped 14 deal journeys and designed one AI-assisted desk that replaces about 11 separate tools.</p>
+            <p class="outcome">Offer-to-close deal management for agents and brokers</p>
+            <a class="case-link" href="/work/deal-desk/">
+              Read the case
+              <span class="sr-only">: Deal Desk</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </article>
+        <article class="project feature reveal" data-cursor-icon="home">
+          <div class="thumb art-slot t7" data-art="perfect-properties">
+            <picture>
+              <source type="image/webp" srcset="assets/art/perfect-properties.webp">
+              <img src="assets/art/perfect-properties.jpg" alt="Three houses, a map pin and a tablet." width="880" height="503" loading="lazy" decoding="async">
+            </picture>
+            <span class="org-pill">Home ownership</span>
+          </div>
+          <div class="project-body">
+            <h3>Perfect Properties</h3>
+            <p>A responsive web app that simplifies the home ownership experience for new buyers.</p>
+            <a class="case-link" href="https://suvarnamyneni.github.io/perfect-properties-case-study/" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: Perfect Properties (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </article>
+        <article class="project rail-end reveal">
+          <div class="more-card">
+            <h3>More from the desk</h3>
+            <p>Six more projects, from grocery discovery to a time log.</p>
+            <a class="case-link" href="#also">
+              See the rest
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="also" aria-labelledby="also-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="also-heading">Also on the desk</h2>
+          <p class="section-sub">Six more projects from the same years of work.</p>
+        </div>
+        <div class="desk-grid">
+          <article class="project desk-card" data-anim="sway" data-cursor-icon="basket" style="--i:0">
+            <div class="art-slot" data-art="amazon-fresh">
+              <picture>
+                <source type="image/webp" srcset="assets/art/amazon-fresh.webp">
+                <img src="assets/art/amazon-fresh.jpg" alt="A basket of vegetables, a recipe book and a phone." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">Amazon, Aug 2020 – Feb 2023</p>
+            <h3>Amazon Fresh to recipe-guided shopping</h3>
+            <p class="blurb">
+              <span class="blurb-main">Revitalizing Amazon Fresh into a recipe-guided grocery shopping service, providing seamless and guided shopping experiences for customers.</span>
+              <span class="blurb-hook">Recipe-guided grocery shopping.</span>
+            </p>
+            <p class="metric">
+              <span class="metric-num" data-value="40" data-prefix="+" data-suffix="%">+40%</span>
+              <span class="metric-label">app usage,</span>
+              <span class="metric-num" data-value="25" data-prefix="+" data-suffix="%">+25%</span>
+              <span class="metric-label">order value</span>
+            </p>
+            <a class="case-link" href="https://suvarnamyneni.github.io/amazon-fresh-case-study/" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: Amazon Fresh (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          <div id="also-more" hidden>
+          <article class="project desk-card desk-extra" data-anim="hop" data-cursor-icon="card" style="--i:1">
+            <div class="art-slot" data-art="agent-transactions">
+              <picture>
+                <source type="image/webp" srcset="assets/art/agent-transactions.webp">
+                <img src="assets/art/agent-transactions.jpg" alt="A clay island with a laptop, a small white house, a folder, and a contract with a pen." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">eXp Realty, 2023–present</p>
+            <h3>Agent Transactions</h3>
+            <p class="blurb">
+              <span class="blurb-main">eXp Realty web application for agents who handle transactions.</span>
+              <span class="blurb-hook">A desk for agents handling transactions.</span>
+            </p>
+            <a class="case-link" href="/work/agent-transactions/">
+              Read the case
+              <span class="sr-only">: Agent Transactions</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          <article class="project desk-card desk-extra" data-anim="swipe" data-cursor-icon="layout" style="--i:2">
+            <div class="art-slot" data-art="myexp-app">
+              <picture>
+                <source type="image/webp" srcset="assets/art/myexp-app.webp">
+                <img src="assets/art/myexp-app.jpg" alt="A clay island with a laptop showing a colourful dashboard and a phone beside it." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">eXp Realty, 2023–present</p>
+            <h3>My eXp Application Design</h3>
+            <p class="blurb">
+              <span class="blurb-main">The My eXp web app experience for eXp Realty agents.</span>
+              <span class="blurb-hook">The agent application, designed end to end.</span>
+            </p>
+            <a class="case-link" href="https://myneni.wixsite.com/exprealty" target="_blank" rel="noopener noreferrer">
+              Read the case
+              <span class="sr-only">: My eXp Application Design (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          <article class="project desk-card desk-extra" data-anim="snap" data-cursor-icon="wallet" style="--i:3">
+            <div class="art-slot" data-art="wall-ett">
+              <picture>
+                <source type="image/webp" srcset="assets/art/wall-ett.webp">
+                <img src="assets/art/wall-ett.jpg" alt="A clay island with a phone, a leather wallet, coins, and a paper bill." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">Fintech</p>
+            <h3>Wall-ett app designing</h3>
+            <p class="blurb">
+              <span class="blurb-main">Wallett, a financial records app, focuses on tracking balances and logging expenses, and offers a bill scanner tool with OCR and fintech account linking.</span>
+              <span class="blurb-hook">Balances, expenses, and a bill scanner.</span>
+            </p>
+            <a class="case-link" href="https://myneni.wixsite.com/wallet" target="_blank" rel="noopener noreferrer">
+              Read the case
+              <span class="sr-only">: Wall-ett (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          <article class="project desk-card desk-extra" data-anim="sway" data-cursor-icon="grid" style="--i:4">
+            <div class="art-slot" data-art="data-central">
+              <picture>
+                <source type="image/webp" srcset="assets/art/data-central.webp">
+                <img src="assets/art/data-central.jpg" alt="A clay island with a monitor and a floating network of a navy hub and orange nodes." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">Product vision</p>
+            <h3>Data Central Navigation Design</h3>
+            <p class="blurb">
+              <span class="blurb-main">A collaborative design process with leadership, users, researchers, designers and cross-functional teams to gather data and drive product vision.</span>
+              <span class="blurb-hook">Navigation shaped with the people who use it.</span>
+            </p>
+            <a class="case-link" href="https://motiveux.wixsite.com/datacentra" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: Data Central Navigation Design (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          <article class="project desk-card desk-extra" data-anim="hop" data-cursor-icon="clock" style="--i:5">
+            <div class="art-slot" data-art="timelog">
+              <picture>
+                <source type="image/webp" srcset="assets/art/timelog.webp">
+                <img src="assets/art/timelog.jpg" alt="A clay island with a navy clock, a peach hourglass, and a tablet." width="880" height="880" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <p class="kicker">Amazon, Aug 2020 – Feb 2023</p>
+            <h3>Timelog Tool MVP</h3>
+            <p class="blurb">
+              <span class="blurb-main">Timelog UI streamlines the tracking of productive and non-productive hours, removing manual data collation and giving team managers one-click access to their team's time data.</span>
+              <span class="blurb-hook">One place for a team's hours.</span>
+            </p>
+            <a class="case-link" href="https://motiveux.wixsite.com/timelogtool" target="_blank" rel="noopener">
+              Read the case
+              <span class="sr-only">: Timelog Tool MVP (opens in a new tab)</span>
+              <span class="go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </article>
+          </div>
+        </div>
+        <button type="button" class="view-more" aria-expanded="false" aria-controls="also-more">View more</button>
+      </div>
+    </section>
+
+    <section class="panel" id="path" aria-labelledby="path-heading">
+      <div class="path-pin">
+        <div class="path-stick">
+          <div class="path-head">
+            <h2 id="path-heading">The path so far</h2>
+            <p class="path-sub">Work, newest first. Eight years of UX design, from banking to AI automation in real estate.</p>
+          </div>
+          <div class="path-track" id="path-track">
+            <svg class="path-weave" aria-hidden="true"></svg>
+            <div class="path-plane" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M2 16 L28 4 L18 16 L28 28 Z" fill="#fffaf3" stroke="#2b3236" stroke-width="1.4" stroke-linejoin="round"/><path d="M2 16 L28 4 L18 16 Z" fill="#f4a98f" stroke="#2b3236" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <article class="path-ep">
+              <span class="path-yr" aria-hidden="true">2023</span>
+              <div class="path-art">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2026.webp"><img src="assets/art/path-stage-2026.jpg" alt="Glossy gold house wrapped in peach clay, with a small spark." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-org"><img class="path-logo" src="assets/logos/exp-realty.svg" alt="eXp Realty" decoding="async" loading="lazy"></p>
+                <h3>Sr UX Designer</h3>
+                <p class="path-when">Feb 2023 – Nov 2026</p>
+                <p class="path-desc">End-to-end UX for the transaction-management platform, the My eXp agent portal and the design system, including AI automation and agentic workflows. Mentored 5 junior designers.</p>
+                <ul class="path-tags">
+                  <li>Deal Desk</li>
+                  <li>AI Automation</li>
+                  <li>Agentic AI</li>
+                </ul>
+              </div>
+            </article>
+            <article class="path-ep">
+              <span class="path-yr" aria-hidden="true">2023</span>
+              <div class="path-art">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2023.webp"><img src="assets/art/path-stage-2023.jpg" alt="Glossy peach basket of gold fruit with a recipe card." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-org"><img class="path-logo" src="assets/logos/amazon.svg" alt="Amazon" decoding="async" loading="lazy"></p>
+                <h3>UX Designer</h3>
+                <p class="path-when">Aug 2020 – Feb 2023</p>
+                <p class="path-desc">Customer experience for Amazon Food and Fresh, including Shop by Recipe, plus seller and buyer marketing pages.</p>
+                <ul class="path-tags">
+                  <li>Amazon Fresh</li>
+                  <li>Shop by Recipe</li>
+                  <li>E-commerce</li>
+                </ul>
+              </div>
+            </article>
+            <article class="path-ep" id="path-icici">
+              <span class="path-yr" aria-hidden="true">2020</span>
+              <div class="path-art">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2020.webp"><img src="assets/art/path-stage-2020.jpg" alt="Glossy gold phone, peach bank card, and a coin." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-org"><img class="path-logo" src="assets/logos/icici-bank.svg" alt="ICICI Bank" decoding="async" loading="lazy"></p>
+                <h3>UX Designer</h3>
+                <p class="path-when">Oct 2018 – Aug 2020</p>
+                <p class="path-desc">Redesigned the iMobile banking app dashboard and employee banking tools.</p>
+                <ul class="path-tags">
+                  <li>iMobile</li>
+                  <li>Fintech</li>
+                  <li>Journey mapping</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <nav class="path-scrub" aria-label="Path years">
+            <div class="path-scrub-line" aria-hidden="true"><span class="path-scrub-fill"></span></div>
+            <button type="button" aria-current="true" aria-label="Sr UX Designer, Feb 2023 – Nov 2026, eXp Realty"><i aria-hidden="true"></i><span>2023</span></button>
+            <button type="button" aria-label="Aug 2020 – Feb 2023, UX Designer, Amazon"><i aria-hidden="true"></i><span>2023</span></button>
+            <button type="button" aria-label="Oct 2018 – Aug 2020, UX Designer, ICICI Bank"><i aria-hidden="true"></i><span>2020</span></button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel path-grouped" id="education" aria-labelledby="path-edu-heading">
+      <div class="path-pin">
+        <div class="path-stick">
+          <div class="path-track">
+            <div class="path-group">
+              <h3 class="path-group-heading" id="path-edu-heading">Education</h3>
+            <article class="path-ep">
+              <span class="path-yr" aria-hidden="true">2018</span>
+              <div class="path-art">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2018.webp"><img src="assets/art/path-stage-2018.jpg" alt="Glossy peach graduation cap on a gold sketchbook." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-when">2018</p>
+                <h3>PG Diploma in Design</h3>
+                <p class="path-org">Manipal Academy of Higher Education</p>
+                <ul class="path-tags">
+                  <li>Design</li>
+                </ul>
+              </div>
+            </article>
+            <article class="path-ep">
+              <span class="path-yr" aria-hidden="true">2017</span>
+              <div class="path-art">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2017.webp"><img src="assets/art/path-stage-2017.jpg" alt="Glossy gold diploma beside a peach laptop." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-when">2017</p>
+                <h3>MCA</h3>
+                <p class="path-org">Osmania University</p>
+                <ul class="path-tags">
+                  <li>Computer applications</li>
+                </ul>
+              </div>
+            </article>
+            <article class="path-ep">
+              <span class="path-yr" aria-hidden="true">2014</span>
+              <div class="path-art path-art-flip">
+                <picture><source type="image/webp" srcset="assets/art/path-stage-2017.webp"><img src="assets/art/path-stage-2017.jpg" alt="Glossy gold diploma beside a peach laptop." width="800" height="800" loading="lazy" decoding="async"></picture>
+              </div>
+              <div class="path-copy">
+                <p class="path-when">2014</p>
+                <h3>B.Sc in Computers</h3>
+                <p class="path-org">Andhra University</p>
+                <ul class="path-tags">
+                  <li>Computers</li>
+                </ul>
+              </div>
+            </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="about" aria-labelledby="about-heading">
+      <div class="wrap about-stage">
+        <div class="about-grid">
+          <div class="portrait">
+            <div class="portrait-art">
+              <picture class="about-illustration">
+                <source type="image/webp" srcset="assets/about-illustration-800.webp 800w, assets/about-illustration.webp 1024w" sizes="(max-width: 900px) 80vw, 420px">
+                <img src="assets/about-illustration-800.jpg" alt="Suvarna at a laptop on a pink desk, with stickers, a child, books and a note that says Progress not Perfection." width="800" height="800" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="float-tags" role="group" aria-label="Fields">
+              <span class="float-tag"><span class="tag-bob"><span class="tag-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="1.8" y="3.2" width="12.4" height="9.2" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M1.8 6.2h12.4" stroke="currentColor" stroke-width="1.4"/><path d="M8 8v3.1M6.7 8.8c.3-.5.7-.8 1.3-.8.8 0 1.2.4 1.2.9s-.5.8-1.2.8-1.2.3-1.2.9.5.8 1.2.8c.5 0 1-.2 1.3-.7" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/></svg></span><span class="float-face">Fintech</span></span></span>
+              <span class="float-tag"><span class="tag-bob"><span class="tag-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2.4 3.4h1.5l1.1 6.3h6.5l1.2-4.3H4.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="12.3" r="1.05" fill="currentColor"/><circle cx="11" cy="12.3" r="1.05" fill="currentColor"/></svg></span><span class="float-face">E-commerce</span></span></span>
+              <span class="float-tag"><span class="tag-bob"><span class="tag-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2.6 7.2 8 2.8l5.4 4.4v5.1a.7.7 0 0 1-.7.7H3.3a.7.7 0 0 1-.7-.7V7.2z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6.5 13V9.2h3V13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="float-face">Real Estate</span></span></span>
+              <span class="float-tag"><span class="tag-bob"><span class="tag-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 1.6 9.3 6.1 13.8 8 9.3 9.9 8 14.4 6.7 9.9 2.2 8 6.7 6.1z" fill="currentColor"/></svg></span><span class="float-face">AI Automation</span></span></span>
+              <span class="float-tag"><span class="tag-bob"><span class="tag-mark" aria-hidden="true"><svg viewBox="0 0 16 16"><circle cx="3.5" cy="8" r="1.65" fill="currentColor"/><circle cx="12.3" cy="3.7" r="1.65" fill="currentColor"/><circle cx="12.3" cy="12.3" r="1.65" fill="currentColor"/><path d="M5.1 8h3.1M8.2 8 10.7 4.8M8.2 8l2.5 3.2" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg></span><span class="float-face">Agentic AI</span></span></span>
+            </div>
+          </div>
+          <div class="about-copy">
+            <h2 id="about-heading">I design from research through to AI workflows people can actually run.</h2>
+            <p>I'm an AI-Native UX Designer (Feb 2023 – Nov 2026) at eXp Realty in Hyderabad. Eight years of that work has run through banking at ICICI, e-commerce at Amazon and real estate technology at eXp Realty.</p>
+            <p>I lead the work from customer research, journey mapping and service blueprints to design systems and AI-powered workflows. A web app redesign at eXp raised daily active users 40% and cut task time 25%.</p>
+            <ul class="skill-chips" aria-label="Skills">
+              <li>Agentic UX</li>
+              <li>AI creation</li>
+              <li>Voice and touch</li>
+              <li>Mobile</li>
+              <li>Design systems</li>
+              <li>Research synthesis</li>
+              <li>Behavioural design</li>
+              <li>Coded prototypes</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="fact-cards">
+          <li>
+            <button type="button" class="fact-card glass" data-count="8" data-suffix="+">
+              <span class="fact-num">8+</span>
+              <span class="fact-label">years designing products</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="fact-card fact-highlight glass">
+              <span class="fact-num">+40%</span>
+              <span class="fact-label">daily active users</span>
+              <span class="fact-num">−25%</span>
+              <span class="fact-label">task time, eXp</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="fact-card glass" data-count="3">
+              <span class="fact-num">3</span>
+              <span class="fact-label">degrees</span>
+              <span class="fact-detail">Manipal, Osmania, Andhra</span>
+            </button>
+          </li>
+        </ul>
+        <div id="kudos-mount" hidden></div>
+      </div>
+    </section>
+
+    <div class="night-band" id="night-band">
+      <div class="sky-layer sky-golden" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/art/sky-golden.webp">
+          <img src="assets/art/sky-golden.jpg" alt="" width="1600" height="900" decoding="async" loading="lazy">
+        </picture>
+      </div>
+      <div class="sky-layer sky-dusk" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/art/sky-dusk.webp">
+          <img src="assets/art/sky-dusk.jpg" alt="" width="1600" height="900" decoding="async" loading="lazy">
+        </picture>
+      </div>
+      <div class="sky-layer sky-night" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/art/sky-night.webp">
+          <img src="assets/art/sky-night.jpg" alt="" width="1600" height="900" decoding="async" loading="lazy">
+        </picture>
+      </div>
+      <div class="cloud-drift" aria-hidden="true">
+        <div class="sky-layer sky-golden"><img src="assets/art/sky-golden.webp" alt="" width="1600" height="900" decoding="async" loading="lazy"></div>
+        <div class="sky-layer sky-dusk"><img src="assets/art/sky-dusk.webp" alt="" width="1600" height="900" decoding="async" loading="lazy"></div>
+        <div class="sky-layer sky-night"><img src="assets/art/sky-night.webp" alt="" width="1600" height="900" decoding="async" loading="lazy"></div>
+      </div>
+      <canvas class="star-field" id="star-field" aria-hidden="true"></canvas>
+      <section class="panel contact-scene" id="contact" aria-labelledby="contact-heading">
+        <canvas class="plane-canvas" id="plane-canvas" aria-hidden="true"></canvas>
+        <div class="contact-copy">
+          <h2 id="contact-heading">Toss me a paper plane.</h2>
+          <p>I'm in Hyderabad, and open to remote or Hyderabad roles. Write to <a class="contact-mail" href="mailto:suvarnamyneni@gmail.com">suvarnamyneni@gmail.com</a>, or pull the plane back and land it in the mailbox.</p>
+          <ol class="steps" id="plane-steps">
+            <li class="is-on"><i>1</i> Pull back</li>
+            <li><i>2</i> Aim for the mailbox</li>
+            <li><i>3</i> Release</li>
+          </ol>
+        </div>
+        <p class="throw-count" id="throw-count" aria-hidden="true">Throws <b id="throw-num">0</b></p>
+        <div class="mail-ring" id="mail-ring" aria-hidden="true"></div>
+        <p class="mail-tag" id="mail-tag">The mailbox</p>
+        <p class="pull-hint" id="pull-hint">Pull me back</p>
+        <button type="button" class="plane-grab" id="plane-grab" aria-describedby="plane-help" data-caption="Pull me back">
+          <span class="sr-only">Paper plane</span>
+        </button>
+        <div class="plane-done" id="plane-done" role="dialog" aria-modal="true" aria-labelledby="plane-done-title" hidden>
+          <div class="plane-tick" aria-hidden="true">✓</div>
+          <h3 id="plane-done-title">It landed.</h3>
+          <p id="plane-done-msg">suvarnamyneni@gmail.com is on your clipboard.</p>
+          <div class="plane-done-row">
+            <a class="plane-btn plane-btn-pri" href="mailto:suvarnamyneni@gmail.com">Write to me</a>
+            <button type="button" class="plane-btn" id="plane-again">Throw again</button>
+          </div>
+        </div>
+        <div class="plane-nudge" id="plane-nudge" hidden>
+          <b>So close.</b>
+          <p>The mailbox can wait. The note still reaches me.</p>
+          <a class="nudge-mail" href="mailto:suvarnamyneni@gmail.com">suvarnamyneni@gmail.com</a>
+          <div class="plane-done-row">
+            <a class="plane-btn plane-btn-pri" href="mailto:suvarnamyneni@gmail.com">Write to me</a>
+            <button type="button" class="plane-btn" id="nudge-copy">Copy</button>
+            <button type="button" class="plane-btn plane-btn-quiet" id="nudge-keep">I'll keep throwing</button>
+          </div>
+        </div>
+        <div class="email-bar">
+          <a class="bar-mail" href="mailto:suvarnamyneni@gmail.com" data-caption="Email Suvarna">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7.2 12 13l8-5.8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="bar-address">suvarnamyneni@gmail.com</span>
+          </a>
+          <button type="button" class="copy-email" data-caption="Copy the address">Copy</button>
+          <span class="bar-sep" aria-hidden="true"></span>
+          <a href="assets/Suvarna-Myneni-Resume.pdf" download data-caption="Resume">Resume</a>
+          <a class="bar-linkedin" href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer" data-caption="LinkedIn" aria-label="LinkedIn"><svg class="bar-in" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.2 10.2V16M7.2 7.8h.1M10.6 16v-3.2c0-1 .6-1.8 1.6-1.8s1.5.8 1.5 1.8V16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="bar-linkedin-label">LinkedIn</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <div class="mode-switch mode-switch-foot" role="group" aria-label="Portfolio">
+          <a href="#top" aria-current="page">Interactive</a>
+          <a href="https://motiveux.wixsite.com/my-site-3" rel="noopener" title="Classic portfolio on Wix">Classic</a>
+        </div>
+        <p id="plane-status" class="sr-only" aria-live="polite"></p>
+        <p id="plane-help" class="sr-only">Drag the plane back, aim at the mailbox, and let go. A landing copies the email address. From the keyboard, press Enter to throw.</p>
+      </section>
+    </div>
+  </main>
+
+<footer class="sm-footer" role="contentinfo">
+  <div class="sm-footer-inner">
+    <p class="sm-footer-copy">© 2026 Suvarna Myneni</p>
+    <nav class="sm-footer-links" aria-label="Footer">
+      <a href="mailto:suvarnamyneni@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sm-sr"> (opens in a new tab)</span></a>
+      <a href="https://suvarnamyneni.github.io/assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
+    </nav>
+  </div>
+</footer>
+
+  <dialog id="hire-dialog" aria-labelledby="hire-title">
+    <div class="hire-card">
+      <button type="button" class="hire-close">Close</button>
+      <h2 id="hire-title">Hire Suvarna Myneni</h2>
+      <p>AI-Native UX Designer with 8+ years across eXp Realty, Amazon and ICICI Bank. Based in Hyderabad or remote.</p>
+      <ul class="hire-links">
+        <li><a href="mailto:suvarnamyneni@gmail.com">suvarnamyneni@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://motiveux.wixsite.com/my-site-3" target="_blank" rel="noopener noreferrer">Wix portfolio<span class="sr-only"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </dialog>
+
+  <div class="cursor" id="cursor" hidden aria-hidden="true">
+    <div class="cursor-sprite">
+      <svg viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M6 3 L22 14 L13 15.5 L10.5 24 Z" fill="#FFFDFB" stroke="#2B3236" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="cursor-case">
+      <svg class="icon-phone" viewBox="0 0 28 28" aria-hidden="true"><rect x="9" y="3" width="10" height="22" rx="2" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6"/><path d="M12 6h4" stroke="#2F6FED" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="icon-desk" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="8" width="20" height="12" rx="2" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6"/><path d="M10 20v3M18 20v3M8 23h12" stroke="#2F6FED" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="icon-chat" viewBox="0 0 28 28" aria-hidden="true"><path d="M6 6h16v12H11l-5 4z" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6" stroke-linejoin="round"/><circle cx="11" cy="12" r="1.2" fill="#2F6FED"/><circle cx="15" cy="12" r="1.2" fill="#2F6FED"/><circle cx="19" cy="12" r="1.2" fill="#2F6FED"/></svg>
+      <svg class="icon-card" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="7" width="20" height="14" rx="2" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6"/><path d="M4 12h20" stroke="#2F6FED" stroke-width="1.6"/></svg>
+      <svg class="icon-layout" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="5" width="9" height="8" rx="1.5" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.5"/><rect x="15" y="5" width="9" height="8" rx="1.5" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.5"/><rect x="4" y="15" width="20" height="8" rx="1.5" fill="#F4F7FB" stroke="#2F6FED" stroke-width="1.5"/></svg>
+      <svg class="icon-basket" viewBox="0 0 28 28" aria-hidden="true"><path d="M6 10h16l-1.5 12h-13z" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 10V8a4 4 0 0 1 8 0v2" fill="none" stroke="#2F6FED" stroke-width="1.6"/></svg>
+      <svg class="icon-home" viewBox="0 0 28 28" aria-hidden="true"><path d="M4 13 14 4l10 9" fill="none" stroke="#2F6FED" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 12v11h14V12" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <svg class="icon-wallet" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="7" width="20" height="14" rx="2" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6"/><path d="M16 14h6v4h-6a2 2 0 0 1 0-4z" fill="#2F6FED"/></svg>
+      <svg class="icon-grid" viewBox="0 0 28 28" aria-hidden="true"><rect x="5" y="5" width="7" height="7" rx="1.4" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.5"/><rect x="16" y="5" width="7" height="7" rx="1.4" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.5"/><rect x="5" y="16" width="7" height="7" rx="1.4" fill="#F4F7FB" stroke="#2F6FED" stroke-width="1.5"/><rect x="16" y="16" width="7" height="7" rx="1.4" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.5"/></svg>
+      <svg class="icon-clock" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="#F4F7FB" stroke="#0B1F3A" stroke-width="1.6"/><path d="M14 9v6l4 2" fill="none" stroke="#2F6FED" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
+    <p class="cursor-bubble"></p>
+  </div>
+  <div class="select-box" id="select-box" hidden aria-hidden="true">
+    <span class="select-size"></span>
+    <i></i><i></i><i></i><i></i>
+  </div>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <style>
+    #work .project:not(.rail-end),
+    #also .desk-card { cursor: pointer; }
+  </style>
+  <script>
+    /* Whole project card opens its case study, same as its Read the case link. */
+    (function () {
+      document.addEventListener("click", function (event) {
+        var node = event.target;
+        if (!node || !node.closest || event.defaultPrevented || event.button !== 0) return;
+        if (node.closest("a, button, input, select, textarea, label, summary, [role='button']")) return;
+        var card = node.closest("#work .project:not(.rail-end), #also .desk-card");
+        if (!card) return;
+        var link = card.querySelector("a.case-link[href]");
+        var href = link && link.getAttribute("href");
+        if (!href || href.charAt(0) === "#") return;
+        if (window.getSelection && String(window.getSelection())) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey) {
+          window.open(link.href, "_blank", "noopener");
+          return;
+        }
+        link.click();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      if (!document.body.classList.contains("is-home")) {
+        var chip = document.querySelector(".brand-chip");
+        if (chip) chip.setAttribute("href", "/#work");
+      }
+      var stack = document.documentElement.classList.contains("is-stack");
+      var sources = stack
+        ? ["js/effects.js", "js/rail.js?v=20261105swipe", "js/main.js", "js/round3.js?v=20261102b", "js/swipe-work.js?v=20261105a"]
+        : ["js/vendor/gsap.min.js", "js/vendor/ScrollTrigger.min.js", "js/vendor/lenis.min.js", "js/effects.js", "js/rail.js?v=20261105swipe", "js/main.js", "js/round3.js?v=20261102b", "js/swipe-work.js?v=20261105a"];
+      var index = 0;
+      function next() {
+        if (index >= sources.length) return;
+        var script = document.createElement("script");
+        script.src = sources[index++];
+        script.onload = next;
+        script.onerror = next;
+        document.body.appendChild(script);
+      }
+      next();
+    })();
+  </script>
+<script data-goatcounter="https://suvarnamyneni.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

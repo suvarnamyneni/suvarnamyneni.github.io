@@ -1,0 +1,41 @@
+/* Selected work: native horizontal swipe rail on every device (html.is-swipe-work). */
+html.is-swipe-work #work.panel { padding: 0; }
+html.is-swipe-work #work .rail-sticky {
+  height: auto !important; display: block !important; overflow: visible !important;
+  padding: 84px 0 28px !important; background: var(--bg);
+}
+html.is-swipe-work #work .rail-stage { overflow: visible; }
+html.is-swipe-work #work .rail-viewport {
+  position: relative; width: 100% !important; margin: 0 !important;
+  overflow-x: auto !important; overflow-y: hidden !important;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain; touch-action: pan-x pan-y;
+  scrollbar-width: none; cursor: grab;
+}
+html.is-swipe-work #work .rail-viewport::-webkit-scrollbar { display: none; }
+html.is-swipe-work #work .rail-viewport.is-grabbing { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+html.is-swipe-work #work .rail-viewport:focus-visible { outline: 2px solid var(--accent, #a34728); outline-offset: 4px; }
+html.is-swipe-work #work .rail-track {
+  display: flex !important; flex-direction: row !important; align-items: stretch;
+  gap: 18px !important; width: max-content !important; height: auto !important;
+  margin: 0 !important; transform: none !important;
+  padding: 6px max(20px, calc((100vw - var(--max, 1120px)) / 2)) 10px !important;
+  grid-template-columns: none !important;
+}
+html.is-swipe-work #work .rail-route,
+html.is-swipe-work #work .rail-plane { display: none !important; }
+html.is-swipe-work #work .rail-track .project {
+  flex: 0 0 min(500px, 84vw) !important; width: auto !important;
+  height: auto !important; min-height: 0; overflow: hidden;
+  scroll-snap-align: start; scroll-margin-inline: max(20px, calc((100vw - var(--max, 1120px)) / 2));
+  grid-column: auto !important; margin: 0 !important;
+}
+html.is-swipe-work #work .rail-track .project.rail-end { flex-basis: min(360px, 72vw) !important; }
+html.is-swipe-work #work .rail-track img { -webkit-user-drag: none; user-select: none; }
+.swipe-nav { display: flex; gap: 10px; justify-content: flex-end; width: min(1120px, calc(100% - 40px)); margin: 14px auto 0; }
+.swipe-nav button {
+  width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--ink, #2b3236);
+  background: transparent; color: var(--ink, #2b3236); cursor: pointer; display: grid; place-items: center;
+}
+.swipe-nav button:disabled { opacity: 0.3; cursor: default; }
+.swipe-nav svg { width: 16px; height: 16px; }
