@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.classList.add("is-swipe-work");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Suvarna Myneni, AI-Native UX Designer</title>
   <meta name="description" content="AI-Native UX Designer in Hyderabad. 8+ years across eXp Realty, Amazon and ICICI Bank. I design AI that knows when to hand off to a human.">
@@ -186,6 +187,7 @@
       setTimeout(function () { root.classList.add("ready"); }, 1600);
     })();
   </script>
+  <link rel="stylesheet" href="css/swipe-work.css?v=20261105a">
 </head>
 <body class="is-home">
   <a class="skip-link" href="#work">Skip to work</a>
@@ -904,8 +906,8 @@
       }
       var stack = document.documentElement.classList.contains("is-stack");
       var sources = stack
-        ? ["js/effects.js", "js/rail.js?v=20261101c", "js/main.js", "js/round3.js?v=20261102b"]
-        : ["js/vendor/gsap.min.js", "js/vendor/ScrollTrigger.min.js", "js/vendor/lenis.min.js", "js/effects.js", "js/rail.js?v=20261101c", "js/main.js", "js/round3.js?v=20261102b"];
+        ? ["js/effects.js", "js/rail.js?v=20261105swipe", "js/main.js", "js/round3.js?v=20261102b", "js/swipe-work.js?v=20261105a"]
+        : ["js/vendor/gsap.min.js", "js/vendor/ScrollTrigger.min.js", "js/vendor/lenis.min.js", "js/effects.js", "js/rail.js?v=20261105swipe", "js/main.js", "js/round3.js?v=20261102b", "js/swipe-work.js?v=20261105a"];
       var index = 0;
       function next() {
         if (index >= sources.length) return;
