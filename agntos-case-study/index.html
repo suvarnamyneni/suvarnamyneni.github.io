@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>agntOS — AI reads and checks. A person decides. · Suvarna Myneni</title>
+<meta name="description" content="Case study by Suvarna Myneni: an AI-native real-estate transaction platform where document AI reads and checks, and a person decides. Designed and prototyped for eXp Realty, 2025–2026. Not yet shipped.">
+<link rel="canonical" href="https://suvarnamyneni-project.github.io/agntos-case-study/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="sticky-head">
+<nav class="top" aria-label="Case study">
+  <div class="wrap">
+    <a class="brand" href="https://suvarnamyneni-project.github.io">Suvarna Myneni</a>
+    <div class="links">
+      <a href="#problem">Problem</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="https://suvarnamyneni-project.github.io">Portfolio</a>
+    </div>
+    <a class="btn" href="walkthrough.html">Open the prototype</a>
+  </div>
+</nav>
+<nav class="rail" id="rail" aria-label="On this page">
+  <div class="rail-label" id="railLabel">At a glance</div>
+  <ol>
+    <li><a href="#glance"><i class="dot" aria-hidden="true"></i>At a glance</a></li>
+    <li><a href="#problem"><i class="dot" aria-hidden="true"></i>Problem</a></li>
+    <li><a href="#research"><i class="dot" aria-hidden="true"></i>Research</a></li>
+    <li><a href="#insights"><i class="dot" aria-hidden="true"></i>Insights</a></li>
+    <li><a href="#principles"><i class="dot" aria-hidden="true"></i>Principles</a></li>
+    <li><a href="#decisions"><i class="dot" aria-hidden="true"></i>Decisions</a></li>
+    <li><a href="#process"><i class="dot" aria-hidden="true"></i>Process</a></li>
+    <li><a href="#outcomes"><i class="dot" aria-hidden="true"></i>Outcomes</a></li>
+    <li><a href="#reflections"><i class="dot" aria-hidden="true"></i>Reflections</a></li>
+  </ol>
+</nav>
+</div>
+
+<header class="hero" id="glance" data-rail="At a glance">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Product design case study · eXp Realty · Desktop web · US &amp; Canada · 2025–2026</p>
+        <h1>AI reads and checks. A person decides.</h1>
+        <p class="lead">I designed an AI-native transaction platform so a real-estate deal can move from submitted to paid on one desk, for every role, with every amount traceable and every error visible.</p>
+        <p><a class="btn" href="walkthrough.html">Open the prototype</a> <a class="btn ghost" href="#decisions">Jump to the decisions</a></p>
+        <div class="meta">
+          <div><b>Role</b>Senior Product Designer. Sole designer, owning product design end to end, including the agntOS design system.</div>
+          <div><b>Team</b>Product managers, product owners, stakeholders, engineering on the transaction service, the accounting service, and Doc AI, plus QA.</div>
+          <div><b>Timeline</b>2025–2026. Designed and prototyped. Not yet shipped.</div>
+          <div><b>Tools</b>Figma, Miro, Claude Design, Cursor, GitHub, Mermaid, Grok.</div>
+        </div>
+      </div>
+      <div class="stack" aria-label="Three desks in the same platform">
+        <figure class="win back l">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Analyst queue</span></div>
+          <a class="shot" href="walkthrough.html#21"><img src="img/21-ta-desk-queue-oldest-first.webp" alt="Analyst queue sorted oldest first. Each row shows age, a critical or asked-agent chip, and the next action." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#21">Analyst queue</a></figcaption>
+        </figure>
+        <figure class="win back r">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Compliance queue</span></div>
+          <a class="shot" href="walkthrough.html#18"><img src="img/18-compliance-queue.webp" alt="Compliance queue of documents waiting for a person. Settlement is view-only for this role." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#18">Compliance queue</a></figcaption>
+        </figure>
+        <figure class="win front">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Agent Home</span></div>
+          <a class="shot" href="walkthrough.html#02"><img src="img/02-home-agent-home.webp" alt="Agent Home. Commission is labelled as an estimate until the file is paid." width="1600" height="893" fetchpriority="high"></a>
+          <figcaption><a href="walkthrough.html#02">Agent Home</a></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="tldr" id="summary">
+      <article class="card"><h3>Problem</h3><p>A paid deal crossed many tools and many roles. Fees lived in notes, status was invisible, and errors after “Settled” stayed hidden.</p></article>
+      <article class="card"><h3>Approach</h3><p>I mapped the system before drawing screens, then designed one shell with a desk for each role on a single shared timeline.</p></article>
+      <article class="card"><h3>AI principle</h3><p>Doc AI extracts and flags. A person picks the value, approves or overrides, and every override is recorded.</p></article>
+      <article class="card"><h3>Status</h3><p>Designed and prototyped. Auditing my own prototype closed the gates that would have let money move early. Impact comes after launch.</p></article>
+    </div>
+    <p class="note">Screens use fictional demo data. This is not a shipped eXp product. Settlement detail is on <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>. Roles and permissions are on <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="problem" data-rail="The problem">
+  <div class="wrap">
+    <p class="kicker">The problem</p>
+    <h2>A paid deal lived in the gaps between tools.</h2>
+    <div class="split">
+      <div class="prose">
+        <p class="pull">“Where is my deal?”</p>
+        <p>The question went from the agent to support, to the transaction analyst, to production support, to accounting.</p>
+        <p>The Transactions Re-imagined program set out to build an AI-native transaction platform for the US and Canada. Before it, taking a deal from submitted to paid meant hopping across separate tools.</p>
+        <ul>
+          <li><strong>Agents</strong> filled required fields that did not apply to their deal, sometimes typing placeholder text to get past a screen. They re-typed listing data, and a rejected document did not notify them. Their loudest ask was one view of what they needed to do.</li>
+          <li><strong>Transaction analysts</strong> settled one deal by moving between the task queue, the desk, the document AI tool, and the document system. Co-agent splits, advances, and coordinator fees arrived as free-text notes and were typed in again.</li>
+          <li><strong>Canada’s closing analysts</strong> shared spreadsheets with finance.</li>
+          <li><strong>After “Settled,”</strong> an accounting variance or a failed posting could stay invisible to the analyst the agent calls.</li>
+        </ul>
+        <p class="pull">How might we carry one deal from submission to the accounting hand-off on one platform, for every role, with every amount traceable and every error visible?</p>
+      </div>
+      <figure class="diagram tall">
+        <img loading="lazy" src="art/85-flows-old-flow.webp" alt="Map of today’s deal flow across roles and systems, from the agent through staff tools to payment.">
+        <figcaption>Today’s deal flow across roles and systems. Scroll inside the frame to read the map.</figcaption>
+      </figure>
+    </div>
+    <figure class="diagram" style="margin-top:22px">
+      <img loading="lazy" src="art/83-research-tool-audit-eleven-to-one.webp" alt="Before and after panel. Before: many separate tools and a chain of hand-offs from the agent to accounting. After: one desk for agents and staff. The footnote says the after side is the designed prototype and results are not measured.">
+      <figcaption>From many tools to one desk. The “now” side is the design, not a measured result.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="research" data-rail="Users and research">
+  <div class="wrap">
+    <p class="kicker">Users and research</p>
+    <h2>The people who touch a deal, and the hand-offs between them.</h2>
+    <div class="prose">
+      <p>Agents on a file include the listing agent, the buyer’s agent, a team lead, a team member, and a referral agent. Staff include the transaction coordinator, the transaction analyst, compliance, Canada’s closing analyst, an approver, accounting, production support, broker and operations, and others.</p>
+      <p>The distinction that shaped the desks: a <strong>transaction coordinator is hired by the agent and is paid on the file</strong>. A <strong>transaction analyst is staff</strong>. Those two people are not the same role. Systems count as actors too, and most failures sat in the hand-offs between them.</p>
+    </div>
+    <h3 style="margin-top:22px">What I did</h3>
+    <ul>
+      <li>Read the program archive: discovery documents, war-room notes, the program document, and a settlement demo. I used Grok as a reading aid and <strong>checked every rule back to its source</strong>.</li>
+      <li>Built an affinity map, the persona set, and a journey sheet. Each step is tagged by actor, system, automation, and build status, and open rules are flagged.</li>
+      <li>Attended war rooms and a workshop, “Documents arrive, I can see my tasks.”</li>
+      <li>Logged open questions, and the places where the sources disagreed, instead of quietly picking a winner.</li>
+    </ul>
+    <p>This pass is synthesis of that archive. I did not run interviews, shadowing, or usability tests with agents or analysts. Timed usability sessions with analysts are the next step.</p>
+    <div class="frames two" style="margin-top:18px">
+      <figure class="diagram">
+        <img loading="lazy" src="art/81-research-personas.webp" alt="Persona set for the people who touch a deal, from listing and buyer’s agents through staff roles such as analyst, compliance, closing, accounting, and support.">
+        <figcaption>The persona set. Role names are generalized.</figcaption>
+      </figure>
+      <figure class="diagram">
+        <img loading="lazy" src="art/80-research-journey-map.webp" alt="Journey map from submit through review, settlement, disbursement, and after close. Marked steps are places where a rule, an owner, or a source of truth was still open.">
+        <figcaption>The journeys on one map. A marked step is still an open rule, owner, or source of truth.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="insights" data-rail="Key insights">
+  <div class="wrap">
+    <p class="kicker">Key insights</p>
+    <h2>What the archive kept saying.</h2>
+    <div class="themes">
+      <article>
+        <p><strong>Checking, not deciding, was the work.</strong> Most effort went into comparing dates and amounts between a document and the deal. The judgment itself was the short part. The AI should do the comparing.</p>
+      </article>
+      <article>
+        <p><strong>Notes were the hidden integration.</strong> Advances, fees, and splits lived in free text. Each line needs a source.</p>
+      </article>
+      <article>
+        <p><strong>“Settled” hid the failure.</strong> Errors after settlement were invisible. An exception needs an owner and a queue.</p>
+      </article>
+      <article>
+        <p><strong>Money is provisional until it settles.</strong> Every figure before settlement is labelled an estimate, with the reason it might move.</p>
+      </article>
+      <article>
+        <p><strong>The US and Canada are different products under one shell.</strong> Canada uses a lawyer or conveyancer, firm and closed stages, and a closing analyst. Renaming a US screen would have lied.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="principles" data-rail="AI principles">
+  <div class="wrap">
+    <p class="kicker">Design principles</p>
+    <h2>How AI behaves in a money workflow.</h2>
+    <div class="rules">
+      <article>
+        <h3>AI reads and checks. A person decides.</h3>
+        <p>Doc AI, the document reader, extracts and flags. Approve, override, and settle are always human actions.</p>
+      </article>
+      <article>
+        <h3>Show the source.</h3>
+        <p>Every value carries a provenance chip: Agent-provided, Extracted, Analyst-entered, or Deal notes.</p>
+      </article>
+      <article>
+        <h3>Admit uncertainty.</h3>
+        <p>States include Processing, Passed, Suggestions, Couldn’t review, and Mismatch. “Passed” and “Approved” are never the same word.</p>
+      </article>
+      <article>
+        <h3>Fail closed, and say how to open.</h3>
+        <p>A critical alert blocks and explains why. An informational alert stays visible and never blocks. Every disabled control carries a reason.</p>
+      </article>
+      <article>
+        <h3>Design the exception first.</h3>
+        <p>A missing signature, an underpayment, or a failed posting is ordinary work. Each gets a queue, an owner, and a reason.</p>
+      </article>
+      <article>
+        <h3>Automate in phases.</h3>
+        <p>First, a person reviews and settles. Later, an AI reviewer comments first. Auto-approval and auto-settle wait until the clear-to-settle documents match and nothing is flagged.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="decisions" data-rail="Design decisions">
+  <div class="wrap">
+    <p class="kicker">Design decisions</p>
+    <h2>Five choices that make the principle real.</h2>
+
+    <article class="decision" id="decision-states">
+      <h3>1. Honest AI review states, including “Couldn’t review”</h3>
+      <p><strong>Before.</strong> Agents typed placeholder text to get past required fields, and staff re-checked every document by hand. A single “done” state would hide what the AI did not actually check.</p>
+      <p><strong>Decision.</strong> I sketched the AI states before any UI: processing, because Doc AI is asynchronous; high and low confidence; mismatch; couldn’t read; and override. An agent can start a deal from a document. Doc AI fills what it can read. A missing signature is a hard block, cleared by uploading again or by an override recorded against a named person.</p>
+      <p>The screen stays honest while the model is still working, unsure, or blocked.</p>
+      <figure class="diagram" style="margin-top:16px">
+        <img loading="lazy" src="art/92-wireframes-ai-interaction-states.webp" alt="Lo-fi sketch of six AI review states: processing, extracted with a source, mismatch, ask the agent, blocked on a missing signature, and resolved with a log. Each state is marked as AI, person, or system.">
+        <figcaption>AI states, sketched before the visual design. Reconstructed for this case study from the early sketches.</figcaption>
+      </figure>
+      <div class="frames two" style="margin-top:14px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Earlier Doc AI review</span></div>
+          <a class="shot" href="walkthrough.html#77"><img loading="lazy" src="img/77-evolution-docai-dark-rail.webp" alt="Earlier visual pass of document review. A missing seller signature blocks create until someone re-uploads or records an override in a named person’s name." width="1600" height="893"></a>
+          <figcaption><span class="tag before">Earlier pass</span><a href="walkthrough.html#77">Doc AI review</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Start from a document</span></div>
+          <a class="shot" href="walkthrough.html#05"><img loading="lazy" src="img/05-create-how-to-start.webp" alt="New transaction panel offering start from a document, read by Doc AI, or start from scratch." width="1600" height="893"></a>
+          <figcaption><span class="tag after">Current</span><a href="walkthrough.html#05">Start from a document</a></figcaption>
+        </figure>
+      </div>
+      <figure class="win" style="margin-top:14px">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Review the extraction</span></div>
+        <a class="shot" href="walkthrough.html#06"><img loading="lazy" src="img/06-docai-review-extraction.webp" alt="Review the extraction. Price is marked as an estimate, the buyer is signed, the seller is not, and Create stays closed until re-upload or a named override." width="1600" height="893"></a>
+        <figcaption><span class="tag after">Current</span><a href="walkthrough.html#06">Doc AI review, with a hard block and a named override</a></figcaption>
+      </figure>
+    </article>
+
+    <article class="decision" id="decision-choose">
+      <h3>2. Review and choose, instead of retyping</h3>
+      <p><strong>Before.</strong> When the extracted value and the agent’s value disagreed, the analyst retyped one of them, and the reason was lost.</p>
+      <p><strong>Decision.</strong> A compare view shows both values, who entered each, when, and the document page and section. The analyst picks one. Commission recalculates, and the choice stays visible, reversible, and timestamped. If they are unsure, they ask the agent. Which source wins by default is still an open decision. I left it undecided in the UI rather than inventing a rule.</p>
+      <div class="frames three" style="margin-top:16px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Critical alerts</span></div>
+          <a class="shot" href="walkthrough.html#24"><img loading="lazy" src="img/24-ta-desk-critical-alerts.webp" alt="Critical alerts listing mismatches. Each one shows the agent-provided value and the extracted value, with source chips, before anyone acts." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#24">Two sources, side by side</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Compare sources</span></div>
+          <a class="shot" href="walkthrough.html#25"><img loading="lazy" src="img/25-ta-desk-review-and-choose.webp" alt="Compare view for a sale-price mismatch. Each side names who entered it and the contract page. The analyst chooses one value and does not retype." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#25">Review and choose</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Financials</span></div>
+          <a class="shot" href="walkthrough.html#32"><img loading="lazy" src="img/32-financials-prefilled.webp" alt="Financials prefilled from the agent desk and extracts. Each line has a source chip, and the analyst edits only what changed." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#32">Financials, with provenance</a></figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="decision" id="decision-gates">
+      <h3>3. Gates that fail closed, and always say why</h3>
+      <p><strong>Before.</strong> When I audited my own combined prototype, sending the disbursement could proceed with an open underpayment, and compliance actions could be disabled with no reason.</p>
+      <p>The disbursement authorization, the DA on the screens, is the package that says who gets paid. <strong>After the audit:</strong></p>
+      <ul>
+        <li>Send DA waits on every critical alert.</li>
+        <li>The package will not confirm until the payee total matches expected funds.</li>
+        <li>“Disbursed” requires the money to balance, or an approved write-off.</li>
+        <li>Every disabled Send shows its reason: waiting on compliance, blockers still open, or already sent.</li>
+        <li>An informational alert, such as a mentor fee under the minimum, explains the math and does not block.</li>
+        <li>Compliance is a person in the loop: Approve, Request changes, or Escalate, with a required reason and an audit line.</li>
+      </ul>
+      <div class="frames two" style="margin-top:16px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">DA package</span></div>
+          <a class="shot" href="walkthrough.html#37"><img loading="lazy" src="img/37-disbursement-da-package.webp" alt="Disbursement package listing payees, roles, amounts, and methods. Confirm stays shut until the payee total matches expected funds." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#37">DA package</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Awaiting funds</span></div>
+          <a class="shot" href="walkthrough.html#40"><img loading="lazy" src="img/40-settlement-awaiting-funds.webp" alt="Settlement awaiting funds. Check details are prefilled from the check copy, and variance reads balanced only when actual equals expected." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#40">Awaiting funds</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Mark disbursed</span></div>
+          <a class="shot" href="walkthrough.html#42"><img loading="lazy" src="img/42-settlement-mark-disbursed.webp" alt="Mark disbursed is available only once funds balance and the dates match." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#42">Mark disbursed</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Compliance review</span></div>
+          <a class="shot" href="walkthrough.html#20"><img loading="lazy" src="img/20-compliance-approve.webp" alt="Compliance review. Approve sends the file on. Request changes sends it back. The action requires a person." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#20">Compliance: approve or send back</a></figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="decision" id="decision-exceptions">
+      <h3>4. Exceptions become owned tasks, not invisible failures</h3>
+      <p><strong>Before.</strong> After “Settled,” a variance or a failed accounting posting could stay invisible, and the agent was the first person to notice.</p>
+      <p><strong>Decision.</strong> Task Center is the spine for what the happy path cannot hold. A missing document, a duplicate, a calculator failure, or a failed hand-off becomes an owned task with a traceable reference. Retry, when the last step failed, and restart, when a middle step failed, look deliberately different. A settled file is append-only, so a correction is its own flow, with a reason. Still proposed, and not treated as finished: a time-boxed flag after settlement that support clears with “manually handled.”</p>
+      <div class="frames three" style="margin-top:16px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Task Center</span></div>
+          <a class="shot" href="walkthrough.html#14"><img loading="lazy" src="img/14-task-center-work-spine.webp" alt="Task Center. Missing documents, duplicates, calculator failures, and failed hand-offs are owned tasks above the files still on the desk." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#14">Task Center, the work spine</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Failed hand-off</span></div>
+          <a class="shot" href="walkthrough.html#15"><img loading="lazy" src="img/15-task-center-oracle-handoff-task.webp" alt="Task detail for a failed accounting hand-off, with an owner, a traceable reference, and actions to resolve, escalate, or replay." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#15">A failed hand-off, owned</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Request a correction</span></div>
+          <a class="shot" href="walkthrough.html#46"><img loading="lazy" src="img/46-post-settlement-request-correction.webp" alt="Request a correction on a settled file: a reason, when to use it, the party at fault, and a description. The original record stays." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#46">Request a correction</a></figcaption>
+        </figure>
+      </div>
+      <figure class="diagram tall" style="margin-top:14px">
+        <img loading="lazy" src="art/87-flows-s1-master-lifecycle.webp" alt="One deal lifecycle with its phases, gates, and loops, and a table reconciling the different names teams used for the same moment, from settle through closed and paid.">
+        <figcaption>One lifecycle. The alias table reconciles the names different teams used for the same moment, including Settle, Mark Disbursed, Disbursed, Settlement Complete, and Closed (Paid). Scroll to read it.</figcaption>
+      </figure>
+    </article>
+
+    <article class="decision" id="decision-desks">
+      <h3>5. One shell, role-aware desks, one shared timeline</h3>
+      <p><strong>Before.</strong> The work was spread across many tools. In my own prototype, an agent could land in the staff UI on someone else’s deal, and the coordinator sat on the staff role switcher.</p>
+      <p><strong>Decision.</strong> One shell, many desks. The agent works from Home, Inbox, Transactions, and Doc AI. Staff work the analyst desk, compliance, Canada, and broker and operations. One status chip per file, and the same timeline for the agent and for staff. That is the answer to “where is my deal?” The coordinator came off the staff switcher, and an agent is sent back to their own deal. Queues can be read oldest first, with the next action on each row. In the US, a manager approves an override when a trigger says so. On a Canadian deal, the closing analyst approves the file before it can settle.</p>
+      <div class="frames two" style="margin-top:16px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Agent Home</span></div>
+          <a class="shot" href="walkthrough.html#02"><img loading="lazy" src="img/02-home-agent-home.webp" alt="Agent Home. Commission is labelled as an estimate until the file is paid." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#02">Agent Home, commission as an estimate</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Deal detail</span></div>
+          <a class="shot" href="walkthrough.html#08"><img loading="lazy" src="img/08-deal-detail-transaction-spine.webp" alt="Deal detail with one status spine shared by the agent and by staff, from create through closed." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#08">The shared timeline</a></figcaption>
+        </figure>
+      </div>
+      <div class="frames three" style="margin-top:14px">
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Oldest first</span></div>
+          <a class="shot" href="walkthrough.html#21"><img loading="lazy" src="img/21-ta-desk-queue-oldest-first.webp" alt="Analyst queue read oldest first, with the next action on each row." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#21">Oldest first</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Compliance queue</span></div>
+          <a class="shot" href="walkthrough.html#18"><img loading="lazy" src="img/18-compliance-queue.webp" alt="Compliance queue. Documents wait for a person, and settlement is view-only." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#18">Compliance queue</a></figcaption>
+        </figure>
+        <figure class="win">
+          <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Canada</span></div>
+          <a class="shot" href="walkthrough.html#50"><img loading="lazy" src="img/50-canada-approve-all.webp" alt="Canadian closing-analyst review. Financials, the disbursement package, and settlement are approved together before the file can settle." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#50">Canada: closing analyst approves before settle</a></figcaption>
+        </figure>
+      </div>
+      <figure class="win" style="margin-top:14px">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Broker and operations</span></div>
+        <a class="shot" href="walkthrough.html#53"><img loading="lazy" src="img/53-broker-ops-pipeline.webp" alt="Broker and operations pipeline, with each deal’s stage through closed and disbursed." width="1600" height="893"></a>
+        <figcaption><a href="walkthrough.html#53">Broker and operations pipeline</a></figcaption>
+      </figure>
+      <h3 style="margin-top:22px;font-family:var(--sans);font-size:16px;letter-spacing:0">The shell, three passes</h3>
+      <div class="evo">
+        <figure class="win">
+          <a class="shot" href="walkthrough.html#74"><img loading="lazy" src="img/74-evolution-home-dark-rail.webp" alt="Earlier home with a dark navigation rail." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#74">Dark rail</a></figcaption>
+        </figure>
+        <span class="arrow" aria-hidden="true">→</span>
+        <figure class="win">
+          <a class="shot" href="walkthrough.html#73"><img loading="lazy" src="img/73-evolution-home-claude-v1.webp" alt="First editorial home, before the current restyle." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#73">Editorial</a></figcaption>
+        </figure>
+        <span class="arrow" aria-hidden="true">→</span>
+        <figure class="win">
+          <a class="shot" href="walkthrough.html#02"><img loading="lazy" src="img/02-home-agent-home.webp" alt="Current Agent Home." width="1600" height="893"></a>
+          <figcaption><a href="walkthrough.html#02">Current</a></figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="process" data-rail="How I worked">
+  <div class="wrap">
+    <p class="kicker">AI-native process</p>
+    <h2>How AI shaped the way I worked.</h2>
+    <div class="prose">
+      <p><strong>Reading.</strong> I used Grok to work through an archive that was already months deep, pulling out rules, conflicts, and open questions. Every rule went back to its source before it reached a screen.</p>
+      <p><strong>Prototyping.</strong> Claude Design carried the visual system and the long canvases. On 5 October 2026 I built a combined Agent and Staff prototype on that visual system: shared state, a role switcher, and both desks. A Cursor and GitHub brief let an engineer clone and run the mock locally. Mock data only, and no secrets.</p>
+      <p><strong>Guardrail.</strong> A fast prototype can be confidently wrong. Figures the model invented were treated as stand-ins, and every build was checked again against the journey sheet. A placeholder was not allowed to become a business rule.</p>
+      <p><strong>Design system.</strong> I own the agntOS design system: tokens, components, keyboard behavior, names for screen readers, and tests. Violet is the AI color. Primary text stays high contrast in light and dark, and the softer hues stay off body copy. A disabled control always says why.</p>
+    </div>
+    <div class="frames two" style="margin-top:18px">
+      <figure class="win">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Combined prototype</span></div>
+        <a class="shot" href="walkthrough.html#54"><img loading="lazy" src="img/54-combined-agent-home.webp" alt="Combined prototype. Agent Home and the staff desks share one state and a role switcher." width="1600" height="893"></a>
+        <figcaption><a href="walkthrough.html#54">Combined prototype, both roles</a></figcaption>
+      </figure>
+      <figure class="win">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Local mock</span></div>
+        <a class="shot" href="walkthrough.html#79"><img loading="lazy" src="img/79-evolution-agent-home-mock.webp" alt="Agent home mock that the Cursor brief used so an engineer could run the prototype locally." width="1600" height="893"></a>
+        <figcaption><a href="walkthrough.html#79">Mock for the Cursor brief</a></figcaption>
+      </figure>
+      <figure class="win">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Design system, light</span></div>
+        <a class="shot" href="walkthrough.html#68"><img loading="lazy" src="img/68-design-system-overview-light.webp" alt="Design system overview in the light theme, built from the agntOS tokens and components." width="1600" height="893"></a>
+        <figcaption><a href="walkthrough.html#68">Design system, light</a></figcaption>
+      </figure>
+      <figure class="win">
+        <div class="chrome" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span class="omnibox">Design system, dark</span></div>
+        <a class="shot" href="walkthrough.html#69"><img loading="lazy" src="img/69-design-system-overview-dark.webp" alt="The same design system overview in the dark theme." width="1600" height="893"></a>
+        <figcaption><a href="walkthrough.html#69">Design system, dark</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes" data-rail="Outcomes">
+  <div class="wrap">
+    <p class="kicker">Outcomes</p>
+    <h2>Designed and prototyped. Not yet shipped.</h2>
+    <div class="prose">
+      <p>Nothing here is a launch result. Impact will be measured after the product ships. What the prototype shows today:</p>
+      <ul>
+        <li>A deal can be followed from the agent’s home to disbursement on one shared timeline.</li>
+        <li>Doc AI shows what it read, what it could not review, and where two sources disagree. A person chooses.</li>
+        <li>Money cannot move while a critical alert is open, and a disabled action says why.</li>
+        <li>A failure after settlement has an owner, instead of disappearing.</li>
+        <li>Auditing my own prototype changed the design. The coordinator left the staff switcher. Send waits on critical alerts. Disbursement waits until the money balances, or a write-off is approved.</li>
+      </ul>
+      <p>After launch I would want to know whether people still have to ask where a deal is, whether errors are caught before money moves, and how often a person overrides the AI. Those answers decide whether automation can go further. None of them are measured yet.</p>
+      <h3>Still open, on purpose</h3>
+      <ul>
+        <li>Which source wins when Doc AI and the deal disagree.</li>
+        <li>Whether approval is per document or per stage.</li>
+        <li>Whether the US and Canada share a cap.</li>
+      </ul>
+    </div>
+    <div class="endcap">
+      <p>The clickable prototype follows one file from the agent’s home through staff review, compliance, disbursement, Canada, and broker oversight.</p>
+      <a class="btn" href="walkthrough.html">Open the prototype</a>
+    </div>
+    <p class="note">For the settlement rules, see <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>. For roles and permissions, see <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>.</p>
+  </div>
+</section>
+
+<section id="reflections" data-rail="Reflections">
+  <div class="wrap">
+    <p class="kicker">Reflections</p>
+    <h2>What I would carry into the next one.</h2>
+    <ol class="lessons">
+      <li>
+        <h3>Map the systems, not just the screens.</h3>
+        <p>The failures lived in the hand-offs. A calmer screen on top of a hop is still a hop.</p>
+      </li>
+      <li>
+        <h3>Write the rule before the picture.</h3>
+        <p>Estimate until paid. Append-only after disbursed. A coordinator is not an analyst. Those rules shaped more of the UI than the visual pass did.</p>
+      </li>
+      <li>
+        <h3>Design the exception first.</h3>
+        <p>Trust is the retry, the escalation, and the correction that does not rewrite history.</p>
+      </li>
+      <li>
+        <h3>AI earns trust by admitting uncertainty.</h3>
+        <p>“Couldn’t review” mattered as much as “Passed.”</p>
+      </li>
+      <li>
+        <h3>A fast prototype can be confidently wrong.</h3>
+        <p>The desks were clickable quickly. The journey sheet kept a placeholder from becoming a business rule.</p>
+      </li>
+      <li>
+        <h3>Sit with analysts before the next visual pass.</h3>
+        <p>The archive was deep, and it was still secondhand. Timed usability sessions are the work I would start sooner.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links-row">
+      <a href="https://suvarnamyneni-project.github.io">Portfolio</a>
+      <a href="walkthrough.html">Prototype</a>
+      <a href="https://suvarnamyneni-project.github.io/work/deal-desk/">Deal Desk</a>
+      <a href="https://suvarnamyneni-project.github.io/work/agent-transactions/">Agent Transactions</a>
+    </div>
+    Suvarna Myneni · Senior Product Designer<br>
+    <span class="note">agntOS case study, 2025–2026. Designed and prototyped with fictional demo data. Not a shipped eXp product.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#rail a'));
+  var sections=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  var label=document.getElementById('railLabel');
+  function set(sec){
+    links.forEach(function(a){
+      var on=a.getAttribute('href')==='#'+sec.id;
+      a.classList.toggle('on', on);
+      if(on) a.setAttribute('aria-current','true');
+      else a.removeAttribute('aria-current');
+    });
+    if(label) label.textContent=sec.getAttribute('data-rail')||'';
+  }
+  function update(){
+    var line=(document.querySelector('.sticky-head').getBoundingClientRect().bottom||0)+32;
+    var current=sections[0];
+    sections.forEach(function(s){
+      if(s.getBoundingClientRect().top<=line) current=s;
+    });
+    if(current) set(current);
+  }
+  update();
+  addEventListener('scroll', update, {passive:true});
+  addEventListener('resize', update);
+})();
+</script>
+</body>
+</html>
