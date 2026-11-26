@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wall ett — Suvarna Myneni</title>
+  <meta name="description" content="Wall ett, a personal project from my UX design course: a money-records app with a bill scanner, linked fintech accounts, and a monthly spend prediction.">
+  <link rel="canonical" href="https://suvarnamyneni.github.io/work/wallet/">
+  <meta name="theme-color" content="#FDF0E2">
+  <meta property="og:title" content="Wall ett — Know where your money went">
+  <meta property="og:description" content="Wall ett, a personal project from my UX design course: a money-records app with a bill scanner, linked fintech accounts, and a monthly spend prediction.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://suvarnamyneni.github.io/work/wallet/">
+  <meta property="og:image" content="https://suvarnamyneni.github.io/assets/art/wall-ett.jpg">
+  <link rel="icon" href="../../assets/favicon.png" type="image/png">
+  <link rel="preload" href="../../assets/fonts/general-sans-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face { font-family: "General Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("../../assets/fonts/general-sans-600.woff2") format("woff2"); }
+    @font-face { font-family: Switzer; font-style: normal; font-weight: 400; font-display: swap; src: url("../../assets/fonts/switzer-400.woff2") format("woff2"); }
+    @font-face { font-family: Switzer; font-style: normal; font-weight: 600; font-display: swap; src: url("../../assets/fonts/switzer-600.woff2") format("woff2"); }
+    :root { --ink: #2b3236; --muted: #41484c; --accent: #a34728; --paper: #fdf0e2; --display: "General Sans", Switzer, sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #fdf0e2; color: #2b3236; font-family: Switzer, "Segoe UI", sans-serif; font-size: 1.0625rem; line-height: 1.5; }
+    img { max-width: 100%; display: block; }
+    h1, h2, p { margin: 0; }
+    a { color: inherit; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: 16px; top: -48px; }
+    html .site-header { position: fixed; z-index: 20; inset: 16px 22px auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0; background: none; pointer-events: none; color: #2b3236; }
+    html .site-header > * { pointer-events: auto; }
+    .brand-chip, .site-nav { display: flex; align-items: center; border-radius: 999px; text-decoration: none; color: #2b3236; background: rgba(255,251,247,.86); border: 1px solid rgba(255,255,255,.7); box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 28px rgba(150,90,70,.12); }
+    html .brand-chip { flex-direction: row; align-items: center; gap: 10px; padding: 5px 16px 5px 5px; }
+    .brand-copy { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+    .brand-name { font-family: "General Sans", Switzer, sans-serif; font-weight: 600; font-size: 14.5px; }
+    .brand-role { display: none; }
+    .brand-back { font-size: 12px; font-weight: 600; color: #b2512c; }
+    .site-nav { position: relative; width: max-content; gap: 2px; padding: 5px; }
+    .nav-menu { display: flex; align-items: center; gap: 2px; }
+    .site-nav a, .nav-toggle { color: #2b3236; text-decoration: none; font: 500 14px/normal Switzer, sans-serif; padding: 7px 14px; border-radius: 999px; background: transparent; border: 0; }
+    .nav-contact, .nav-toggle { display: none; }
+    @media (max-width: 759px) {
+      html .site-header { left: 12px; right: 12px; top: 12px; }
+      .brand-last, .nav-menu { display: none; }
+      .brand-back { display: block; }
+      .nav-contact, .nav-toggle { display: inline-flex; align-items: center; padding: 7px 12px; }
+    }
+  </style>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/effects.css">
+  <link rel="stylesheet" href="../../css/round4.css">
+  <link rel="stylesheet" href="../../css/case.css">
+  <link rel="stylesheet" href="../../css/sm-footer.css?v=20261101e">
+<link rel="stylesheet" href="../../css/responsive.css?v=20261102b"><style>.sm-footer{--bg:#fdf0e2;--ink:#2b3236;--muted:#41484c;--accent:#a34728}</style>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var stack = window.matchMedia("(max-width: 900px), (pointer: coarse)").matches;
+      root.classList.toggle("is-stack", stack || reduce);
+      if (!reduce) root.classList.add("has-motion");
+      root.classList.add("ready");
+    })();
+  </script>
+  <style>
+    /* Wall ett touches: the app's own palette, kept small */
+    .wallet-phases { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; counter-reset: phase; }
+    .wallet-phases li { counter-increment: phase; padding: 16px 16px 18px; border-radius: 18px; background: rgba(255,251,247,.8); border-top: 4px solid var(--phase, #434b74); box-shadow: 0 8px 24px rgba(67,75,116,.08); transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+    .wallet-phases li::before { content: "0" counter(phase); display: block; font: 600 12px/1 var(--display); letter-spacing: .08em; color: var(--phase, #434b74); margin-bottom: 8px; }
+    .wallet-phases b { display: block; font-family: var(--display); font-size: 1.05rem; margin-bottom: 4px; }
+    .wallet-phases span { font-size: .92rem; color: var(--muted); }
+    .wallet-swatches { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; padding: 0; list-style: none; }
+    .wallet-swatches li { display: flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: rgba(255,251,247,.85); font: 500 13px/1 Switzer, sans-serif; transition: transform .3s ease; }
+    .wallet-swatches i { width: 22px; height: 22px; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1px rgba(43,50,54,.15); }
+    .wallet-flag { display: inline-block; margin-top: 14px; padding: 6px 12px; border-radius: 999px; background: #f3efff; color: #434b74; font: 600 13px/1.2 Switzer, sans-serif; }
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .wallet-phases li:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(67,75,116,.14); }
+      .wallet-swatches li:hover { transform: translateY(-2px); }
+    }
+    @media (max-width: 900px) { .wallet-phases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 480px) { .wallet-phases { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .wallet-phases li, .wallet-swatches li { transition: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#story">Skip to the story</a>
+  <header class="site-header">
+    <a class="brand-chip" href="/#work" data-caption="Back to all work">
+      <img class="brand-avatar" src="../../assets/avatar-96.webp" width="36" height="36" alt="" decoding="async">
+      <span class="brand-copy">
+        <b class="brand-name">Suvarna <span class="brand-last">Myneni</span></b>
+        <small class="brand-role">Sr UX Designer, Feb 2023 – Present</small>
+        <small class="brand-back">← Back to all work</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <div id="nav-menu" class="nav-menu">
+        <a href="/#work">Work</a>
+        <a href="/#path">Path</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <a class="nav-contact" href="/#contact">Contact</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    </nav>
+  </header>
+  <div class="nav-backdrop" hidden></div>
+
+  <main class="case" id="story">
+    <nav class="case-rail" aria-label="On this page">
+      <div class="case-rail-list">
+        <span class="case-rail-mark" aria-hidden="true"></span>
+        <ol>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#ideate">Ideate</a></li>
+          <li><a href="#design">Design</a></li>
+          <li><a href="#final">Final screens</a></li>
+        </ol>
+      </div>
+      <div class="case-rail-progress" aria-hidden="true"><span class="case-rail-fill"></span></div>
+    </nav>
+    <header class="case-hero wrap case-reveal" id="introduction">
+      <p class="case-eyebrow">Personal project · UX design course · Fintech app</p>
+      <h1>Know where your money went</h1>
+      <p class="case-lede">Wall ett is a money-records app I designed during my UX design course. It tracks balances across fintech accounts, records expenses by scanning the bill, and predicts what you will spend this month.</p>
+      <ul class="case-tags" aria-label="Work">
+        <li>User research</li>
+        <li>Persona and empathy map</li>
+        <li>User flow and card sorting</li>
+        <li>Sketches to hi-fi</li>
+        <li>Design system</li>
+      </ul>
+      <p class="wallet-flag">Personal project, not client work</p>
+    </header>
+    <figure class="case-frame wrap case-reveal">
+      <img src="../../assets/case/wallet/hero.svg" width="1400" height="788" alt="Wall ett home screen on a phone: balance, total spent, and connected accounts." fetchpriority="high" decoding="async">
+      <figcaption>Scan your bill. The home screen shows your balance, what you have spent, and every connected account.</figcaption>
+    </figure>
+    <dl class="case-meta wrap case-reveal">
+      <div><dt>Context</dt><dd>A personal project from my UX design course.</dd></div>
+      <div><dt>Role</dt><dd>UX/UI design, from research through hi-fi screens and a small design system.</dd></div>
+      <div><dt>Time and tools</dt><dd><span class="case-count" data-count="2" style="--digits: 1">2</span> weeks · <span class="case-count" data-count="22" style="--digits: 2">22</span>+ app screens · Figma, Canva</dd></div>
+    </dl>
+    <section class="story-map wrap case-reveal" aria-labelledby="story-map-heading">
+      <h2 class="story-title" id="story-map-heading">From scattered balances to one record</h2>
+      <p class="story-dek">The problem, what people told me, and the app that came out of it.</p>
+      <div class="story-board">
+        <svg class="story-svg" viewBox="0 0 360 640" aria-hidden="true">
+          <defs><mask id="story-draw" maskUnits="userSpaceOnUse"><path class="route-mask" d="M32 78 L78 148 L40 214 L82 300 L36 366 L80 432 L44 520 L84 586 L40 650" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"/></mask></defs>
+          <path class="route-grey" d="M32 78 L78 148 L40 214 L82 300 L36 366 L80 432 L44 520 L84 586 L40 650"/>
+          <path class="route-rust" d="M32 78 L78 148 L40 214 L82 300 L36 366 L80 432 L44 520 L84 586 L40 650"/>
+          <g class="story-plane" transform="translate(32 78)"><g transform="translate(-16 -16) scale(0.5)"><path d="M6 34 L58 8 L36 58 L28 36 Z" fill="#F6C7B0" stroke="#2B3236" stroke-width="2.5" stroke-linejoin="round"/><path d="M28 36 L58 8" fill="none" stroke="#A34728" stroke-width="2"/></g></g>
+        </svg>
+        <article class="act-card" data-act="0">
+          <a class="act-name" href="#problem-heading"><span class="act-copy"><span class="act-kicker">Act 1</span> The problem</span></a>
+          <ol>
+            <li><a class="beat" href="#problem-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Running out of balance</span></a></li>
+            <li><a class="beat" href="#problem-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Money spread across apps</span></a></li>
+            <li><a class="beat" href="#research-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Three kinds of recorders</span></a></li>
+          </ol>
+        </article>
+        <article class="act-card" data-act="1">
+          <a class="act-name" href="#persona-heading"><span class="act-copy"><span class="act-kicker">Act 2</span> The people</span></a>
+          <ol>
+            <li><a class="beat" href="#persona-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">The Lazy Spender</span></a></li>
+            <li><a class="beat" href="#empathy-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Pains and gains</span></a></li>
+            <li><a class="beat" href="#flow-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">One flow, six sections</span></a></li>
+          </ol>
+        </article>
+        <article class="act-card" data-act="2">
+          <a class="act-name" href="#final-heading"><span class="act-copy"><span class="act-kicker">Act 3</span> The app</span></a>
+          <ol>
+            <li><a class="beat is-key" href="#scanner-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Scan the bill</span></a></li>
+            <li><a class="beat" href="#manual-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">Add it by hand</span></a></li>
+            <li><a class="beat" href="#report-heading"><span class="beat-mark" aria-hidden="true"></span><span class="beat-label">See the month, and the next one</span></a></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+    <section class="case-block wrap case-reveal" id="problem" aria-labelledby="problem-heading">
+      <p class="case-eyebrow">Problem</p>
+      <h2 id="problem-heading">People run out of balance mid-shop, and nobody tracks it all.</h2>
+      <p class="case-copy">Running out of balance while shopping is common, and it usually comes down to habit. Some people just do not watch their balances and expenses. That does not mean they should spend less. The real trouble is tracking balances and expenses across many platforms.</p>
+      <p class="case-copy">So the brief I set myself: a way to record balances and expenses that improves people's transactional habits.</p>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="idea-heading">
+      <p class="case-eyebrow">The idea</p>
+      <h2 id="idea-heading">Record expenses and track balances. Nothing more.</h2>
+      <ul class="case-themes">
+        <li><b>Bill scanner</b> Expenses are recorded by scanning the bill, using optical character recognition.</li>
+        <li><b>Connected accounts</b> People connect every fintech account they have, so balances live in one place.</li>
+        <li><b>Spend prediction</b> The app predicts total spending from the expense records.</li>
+      </ul>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="process-heading">
+      <p class="case-eyebrow">Process</p>
+      <h2 id="process-heading">Five phases in two weeks.</h2>
+      <p class="case-copy">Ideate and Design looped back on each other. Testing closed out the second week.</p>
+      <ol class="wallet-phases">
+        <li style="--phase:#e9963f"><b>Discover</b><span>User research, user interviews</span></li>
+        <li style="--phase:#e0645c"><b>Define</b><span>Persona, empathy map, journey map</span></li>
+        <li style="--phase:#4f9a6c"><b>Ideate</b><span>User flow, card sorting</span></li>
+        <li style="--phase:#3f97ab"><b>Design</b><span>Wireframes, hi-fi designs</span></li>
+        <li style="--phase:#c0578a"><b>Testing</b><span>Feedback, conclusion</span></li>
+      </ol>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/timeline.svg" width="1400" height="758" alt="Two-week timeline: Discover and Define in week 1, Ideate across both weeks, Design in week 2, then Testing." loading="lazy" decoding="async">
+        <figcaption>Scope of work and timeline across the two weeks.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" id="research" aria-labelledby="research-heading">
+      <p class="case-eyebrow">Discover</p>
+      <h2 id="research-heading">Three kinds of people, one set of questions.</h2>
+      <p class="case-copy">Before writing interview questions I split the audience into three segments:</p>
+      <div class="case-steps">
+        <article><h3>Never record</h3><p>People who never record their expenses.</p></article>
+        <article><h3>Record by hand</h3><p>People who record them without a dedicated app: a notebook, digital notes, or Excel.</p></article>
+        <article><h3>Use an app</h3><p>People who regularly use a financial recording app.</p></article>
+      </div>
+      <p class="case-copy">The interviews covered monthly spending, cash or cashless and why, which e-wallets people use, whether they keep bills, what happens when they run out of money while shopping, and whether they would want an app that tracks every balance or limits spending by category.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/research.svg" width="1400" height="1040" alt="Customer segments and the thirteen interview questions." loading="lazy" decoding="async">
+        <figcaption>The segments and the full interview question list.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="persona-heading">
+      <p class="case-eyebrow">Define</p>
+      <h2 id="persona-heading">Fikri, the Lazy Spender.</h2>
+      <p class="case-copy">The persona came out of the interviews: a 20-year-old student living overseas, with money spread across several fintech platforms. He does not know how much he has spent in a month, or how much he has left, and he is too lazy to log expenses one at a time.</p>
+      <ul class="case-themes">
+        <li><b>Goals</b> Easy financial records, every fintech account in one app, and a clear view of the month's expenses.</li>
+        <li><b>Frustrations</b> Recording expenses feels like a chore, and he never really knows his balance.</li>
+      </ul>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/persona.svg" width="1400" height="1003" alt="Persona card for Muhammad Dimas Fikri, 20, student, archetype The Lazy Spender." loading="lazy" decoding="async">
+        <figcaption>Persona: bio, goals, frustrations, personality and motivation.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="empathy-heading">
+      <p class="case-eyebrow">Empathy map</p>
+      <h2 id="empathy-heading">"I don't really know how much money I have left in total."</h2>
+      <p class="case-copy">The pains were time, laziness, and not being used to taking notes. The gains were a fast way to record, easy tracking, and seeing total spend with some analysis behind it. That pair shaped everything after: recording had to take almost no effort.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/empathy-map.svg" width="1400" height="1714" alt="Empathy map with say and do, see, think and feel, hear, pain and gain." loading="lazy" decoding="async">
+        <figcaption>Empathy map.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" id="ideate" aria-labelledby="flow-heading">
+      <p class="case-eyebrow">Ideate</p>
+      <h2 id="flow-heading">One path from a new note to the report.</h2>
+      <p class="case-copy">The user flow runs from register and login to home, connecting accounts, and a new note. A note is either a scanned bill or a manual entry. From there people check history or the monthly and quarterly report, then start a new note.</p>
+      <div class="case-gallery">
+        <figure class="case-shot">
+          <img src="../../assets/case/wallet/user-flow.svg" width="1400" height="1325" alt="User flow from register to scan bill or add manually, then history and reports." loading="lazy" decoding="async">
+          <figcaption>User flow.</figcaption>
+        </figure>
+        <figure class="case-shot">
+          <img src="../../assets/case/wallet/card-sorting.svg" width="1400" height="1151" alt="Card sorting into homepage, notes, balance, history, analytics and profile." loading="lazy" decoding="async">
+          <figcaption>Card sorting into six sections: home, notes, balance, history, analytics, profile.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="case-block wrap case-reveal" id="design" aria-labelledby="sketch-heading">
+      <p class="case-eyebrow">Design</p>
+      <h2 id="sketch-heading">Crazy 8s on paper, then wireframes.</h2>
+      <p class="case-copy">I sketched with Crazy 8s, the Design Sprint exercise of eight distinct ideas in eight minutes. The low-fidelity wireframes came straight from those sketches.</p>
+      <div class="case-gallery">
+        <figure class="case-shot">
+          <img src="../../assets/case/wallet/sketches.svg" width="1400" height="1229" alt="Crazy 8s paper sketches of home, bill, prediction, history, profile and detail screens." loading="lazy" decoding="async">
+          <figcaption>Paper sketches.</figcaption>
+        </figure>
+        <figure class="case-shot">
+          <img src="../../assets/case/wallet/wireframes.svg" width="1400" height="1723" alt="Low-fidelity wireframes of eight screens." loading="lazy" decoding="async">
+          <figcaption>Low-fidelity wireframes.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="system-heading">
+      <p class="case-eyebrow">Design system</p>
+      <h2 id="system-heading">Calm indigo, and SF Pro Text.</h2>
+      <p class="case-copy">A primary range of soft violets into deep indigo, a secondary set for status, SF Pro Text throughout, and a ten-step text hierarchy from 22px display down to 9px.</p>
+      <ul class="wallet-swatches" aria-label="Colour palette">
+        <li><i style="--sw:#F8F8F8"></i>#F8F8F8</li>
+        <li><i style="--sw:#F3EFFF"></i>#F3EFFF</li>
+        <li><i style="--sw:#DBD7F6"></i>#DBD7F6</li>
+        <li><i style="--sw:#8D82A3"></i>#8D82A3</li>
+        <li><i style="--sw:#434B74"></i>#434B74</li>
+        <li><i style="--sw:#D2EEE7"></i>#D2EEE7</li>
+        <li><i style="--sw:#73C4CD"></i>#73C4CD</li>
+        <li><i style="--sw:#24AB32"></i>#24AB32</li>
+        <li><i style="--sw:#DD4849"></i>#DD4849</li>
+      </ul>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/design-system.svg" width="1400" height="1852" alt="Design system: primary and secondary colours, SF Pro Text, and the text hierarchy table." loading="lazy" decoding="async">
+        <figcaption>Colours, typeface and text hierarchy.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" id="final" aria-labelledby="final-heading">
+      <p class="case-eyebrow">Final screens</p>
+      <h2 id="final-heading">Onboarding, then straight to the balance.</h2>
+      <p class="case-copy">Three onboarding cards (scan, organise, get insights), then create an account or log in, with Google as an option.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/onboarding.svg" width="1400" height="1735" alt="Onboarding, sign-up, success and login screens." loading="lazy" decoding="async">
+        <figcaption>Onboarding and sign-in.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="scanner-heading">
+      <p class="case-eyebrow">Home and bill scanner</p>
+      <h2 id="scanner-heading">Photograph the bill. It becomes a note.</h2>
+      <p class="case-copy">Home shows balances across every account, total spend and the latest expense. To add an expense, people take or pick a photo of the bill. The items come through as a digital note, and they pick a category and payment method before finishing.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/home-scanner.svg" width="1400" height="1934" alt="Home screen, add expense, bill photo, order details, category picker and photo picker." loading="lazy" decoding="async">
+        <figcaption>Home, then the bill scanner flow.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="manual-heading">
+      <p class="case-eyebrow">Manual add</p>
+      <h2 id="manual-heading">No bill? A few steps by hand.</h2>
+      <p class="case-copy">The manual note has two tabs. Transaction takes a category, item, price, quantity and payment method. Transfer records money moved from one account to another. Finish becomes active once the note is filled in.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/manual-add.svg" width="882" height="1008" alt="Manual add screens for a transaction and a transfer, empty and filled." loading="lazy" decoding="async" style="max-width:720px;margin-inline:auto">
+        <figcaption>Transaction and transfer, empty and filled.</figcaption>
+      </figure>
+    </section>
+    <section class="case-block wrap case-reveal" aria-labelledby="report-heading">
+      <p class="case-eyebrow">History, report and profile</p>
+      <h2 id="report-heading">Every note in one list, and next month's estimate.</h2>
+      <p class="case-copy">History splits transactions from transfers and filters by category. Report shows a monthly breakdown by category and a quarterly view, with a prediction of this month's spend based on daily expenses. Profile holds categories, PIN, language, currency and dark mode.</p>
+      <figure class="case-frame">
+        <img src="../../assets/case/wallet/history-report.svg" width="1400" height="1784" alt="History, report and profile screens." loading="lazy" decoding="async">
+        <figcaption>History, report and profile.</figcaption>
+      </figure>
+    </section>
+  </main>
+<footer class="sm-footer" role="contentinfo">
+  <div class="sm-footer-inner">
+    <p class="sm-footer-copy">© 2026 Suvarna Myneni</p>
+    <nav class="sm-footer-links" aria-label="Footer">
+      <a href="mailto:suvarnamyneni@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/suvarnamyneni/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sm-sr"> (opens in a new tab)</span></a>
+      <a href="https://suvarnamyneni.github.io/assets/Suvarna-Myneni-Resume.pdf" download>Resume</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="cursor" id="cursor" hidden aria-hidden="true">
+    <div class="cursor-sprite">
+      <svg viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M6 3 L22 14 L13 15.5 L10.5 24 Z" fill="#FFFDFB" stroke="#2B3236" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="cursor-bubble"></p>
+  </div>
+  <script src="../../js/case.js"></script>
+  <script>
+    (function () {
+      var chip = document.querySelector(".brand-chip");
+      if (chip) chip.setAttribute("href", "/#work");
+      var stack = document.documentElement.classList.contains("is-stack");
+      var sources = stack
+        ? ["../../js/effects.js"]
+        : ["../../js/vendor/lenis.min.js", "../../js/effects.js"];
+      var index = 0;
+      function next() {
+        if (index >= sources.length) {
+          if (window.initCaseScroll) window.initCaseScroll();
+          return;
+        }
+        var script = document.createElement("script");
+        script.src = sources[index++];
+        script.onload = next;
+        script.onerror = next;
+        document.body.appendChild(script);
+      }
+      next();
+    })();
+  </script>
+<script data-goatcounter="https://suvarnamyneni.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
